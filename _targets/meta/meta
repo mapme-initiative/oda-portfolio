@@ -1,0 +1,23 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+additional_isos|stem|01a3f5d74a93b43c|cd393d2d3c096242|ef46db3751d8e999|226951240|additional_isos|t19927.4794106973s|4fd03901ce9470f4|4|file|local|vector|||2.855||
+check_valid|function|1b1a87eb1e645fa3|||||||||||||||
+do_sth|function|3cfd3c32456d79a5|||||||||||||||
+fetch_wdpa|function|80c20fb563a6d0e1|||||||||||||||
+get_oda_codes|function|cec97e281ca8ca24|||||||||||||||
+get_oda_iso_codes|function|067f7459c9eda50f|||||||||||||||
+get_oda_recipients|function|8e3d251191115a2f|||||||||||||||
+get_oecd_isos|function|afbf5b9bf6fa6c2f|||||||||||||||
+get_wdpa|stem||3f5a040645490fc9|35a11257cc0eb527|-616271098||t19927.4257806442s||0|file|local|vector|||3.722|no nonmissing arguments to max returning Inf|could not find packages mapme.pipelines, mapme.indicators in library paths
+lcos|object|5dd38a94e3b78c28|||||||||||||||
+make_valid|function|087d2ea440b2c68c|||||||||||||||
+match_isos|function|90e846fc4c811d89|||||||||||||||
+oda_iso_codes|stem|f4792fd8b0ac7e90|b9ecf4bc5df95665|786d13c0abbd8ce4|1800299912|./data/oda_iso_codes.csv|t19927.4761413096s|8db44bc8a23a91c1|1595|file|local|vector|||0.546||
+oda_recipients|stem|eeb8cb65f48a3a2c|3506c62a720c889d|7e1fdbf3cc54dbae|1593928194|./data/oda_recipients.csv|t19927.4761349207s|89362cfdfa89bed7|8967|file|local|vector|||3.106||
+oecd_wdpas|stem|d5a44b1aecd5550e|0e7077b688b1ebf2|9f494b3e8b3a3ca0|-725069359|./data/WDPA_WDOECM_Jul2024_Public_oecd.parquet|t19927.4871726772s|c350af92a41a4408|510750634|file|local|vector|||48.219||
+raw_wdpa|stem|3778f4712753cf84|3f5a040645490fc9|d8d7c0b08d8f295a|-316263260|./data/WDPA_WDOECM_Jul2024_Public.parquet|t19927.4501917669s|c6482c257661f9e7|4790643309|file|local|vector|||408.892|GDAL Message 1 organizePolygons received a polygon with more than 100 parts. The processing may be really slow.  You can skip the processing by setting METHODSKIP, or only make it analyze counterclock wise parts by setting METHODONLY_CCW if you can assume that the outline of holes is counterclock wise defined|
+subset_wdpa|function|63eb6e3601fecae3|||||||||||||||
+target_isos|stem|e0e2333b4a7f7187|c8bbd56f14c6511d|d6f4314f2dc901a3|-907082707||t19927.4866145331s|ffc82f3c9236def2|437|rds|local|vector|||0.001||
+test|stem|cabb93e5a41af405|af0c1c807d04aae8|ce286a58d9d20ddb|1839796588||t19927.451317921s|cc81a7537cb02258|59|rds|local|vector|||1.719||
+test_1|function|661d33d335237c4f|||||||||||||||
+testf|function|0b63e452e90185d1|||||||||||||||
+valid_wdpa|stem|50d6dbce8f3ed1df|0837ec43a488c997|43dbd1bc39417c73|2108258493|./data/WDPA_WDOECM_Jul2024_Public_valid.parquet|t19927.4670593948s|bba40781670d85cb|4773571520|file|local|vector|||483.734|GDAL Error 4 Unable to open .dataWDPA_WDOECM_Jul2024_Public_valid.parquet to obtain file list.|
