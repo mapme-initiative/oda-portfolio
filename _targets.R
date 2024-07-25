@@ -1,21 +1,42 @@
 # Load packages required to define the pipeline:
 library(targets)
 
+# adjust these variables to your local setup
+
+wdpa_opts <- list(
+  path = "./data",
+  version = "Jul2024"
+)
+
+mapme_opts <- list(
+  outdir = "~/mapme/data",
+  rawdir = "~/mapme/raw",
+  mapme_config = "./config.yaml",
+  batch_size = 50000,
+  max_cores = 10
+)
+
+#----------- do not change below this line -------------#
+
 # Set target options:
 tar_option_set(
-  packages = c("mapme.biodiversity", "mapme.pipelines", "mapme.indicators", "sf",
-               "readxl")
+  packages = c(
+    "mapme.biodiversity",
+    "mapme.pipelines",
+    "mapme.indicators",
+    "sf",
+    "readxl"
+  )
 )
 
 # Run the R scripts in the R/ folder with your custom functions:
 tar_source("./R")
-# tar_source("other_functions.R") # Source other scripts as needed.
 
 # Replace the target list below with your own:
 list(
   tar_target(
     name = raw_wdpa,
-    command = fetch_wdpa(version = "Jul2024", out_path = "./data"),
+    command = fetch_wdpa(wdpa_opts$path, wdpa_opts$version),
     format = "file"
   ),
   tar_target(
@@ -26,12 +47,10 @@ list(
   tar_target(
     name = oda_iso_codes,
     command = get_oda_iso_codes(),
-    format = "file"
   ),
   tar_target(
     name = oda_recipients,
     command = get_oda_recipients(),
-    format = "file"
   ),
   tar_target(
     name = additional_isos,
@@ -45,6 +64,11 @@ list(
   tar_target(
     name = oecd_wdpas,
     command = subset_wdpa(valid_wdpa, target_isos),
+    format = "file"
+  ),
+  tar_target(
+    name = indicators_wdpa,
+    command = run_mapme_indicators(oecd_wdpas, mapme_opts),
     format = "file"
   )
 )

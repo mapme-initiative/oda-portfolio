@@ -14,7 +14,11 @@ The goal of oda-portfolio is to establish a pipeline with the
 within countries that received official development aid by OECD member
 countries.
 
-This repository is currently very much work in progress! Use it at your
-own risk. ;)
-
 ![](README_files/figure-gfm/targets-1.png)<!-- -->
+
+To run the pipeline adjust `_targets.R` and `config-oecd-countries.yaml`
+to your local settings and then run the following from a shell:
+
+``` shell
+$ Rscript -e 'targets::tar_make()'
+```
