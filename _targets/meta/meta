@@ -1,8 +1,11 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-additional_isos|stem|01a3f5d74a93b43c|cd393d2d3c096242|ef46db3751d8e999|226951240|additional_isos|t19929.2614106709s|4fd03901ce9470f4|4|file|local|vector|||2.754||
+additional_isos|stem|01a3f5d74a93b43c|cd393d2d3c096242|ef46db3751d8e999|226951240|additional_isos|t19929.3662900481s|4fd03901ce9470f4|4|file|local|vector|||2.764||
 batch_size|object|0814f9181efb801d|||||||||||||||
+buffer_50km|stem||9f29d3ff913bb081|254e21038e06fb45|1776252357||t19929.609926235s||0|file|local|vector|||396.798|UNRELIABLE VALUE Future none unexpectedly generated random numbers without specifying argument seed. There is a risk that those random numbers are not statistically sound and the overall results might be invalid. To fix this, specify seedTRUE. This ensures that proper, parallelsafe random numbers are produced via the LEcuyerCMRG method. To disable this check, use seedNULL, or set option future.rng.onMisuse to ignore.. UNRELIABLE VALUE Future none unexpectedly generated random numbers without specifying argument seed. There is a risk that those random numbers are not statistically sound and the overall results might be invalid. To fix this, specify seedTRUE. This ensures that proper, parallelsafe random numbers are produced via the LEcuyerCMRG method. To disable this check, use seedNULL, or set option future.rng.onMisuse to ignore.. UNRELIABLE VALUE Future none unexpectedly generated random numbers without specifying argument seed. There is a risk that those random numbers are not statistically sound and the overall results might be invalid. To fix this, specify seedTRUE. This ensures that proper, parallelsafe random numbers are produced via the LEcuyerCMRG method. To disable this check, use seedNULL, or set option future.rng.onMisuse to ignore.. UNRELIABLE VALUE Future none unexpectedly generated random numbers without specifying argument seed. There is a risk that those random numbers are not statistically sound and the overall results might be invalid. To fix this, specify seedTRUE. This ensures that proper, parallelsafe random numbers are produced via the LEcuyerCMRG method. To disable this check, use seedNULL, or set option future.rng.onMisuse to ignore.. UNRELIABLE VALUE Future none unexpectedly generated random numbers without specifying argument seed. There is a risk that those random numbers are not statistically sound and the overall results might be invalid. To fix this, specify seedTRUE. This ensures tha|Could not guess driver for .dataWDPA_WDOECM_Jul2024_Public_oecd_buffer_50km.parquet
+buffer_wdpa|function|2c845ff5041ab492|||||||||||||||
 check_valid|function|1b1a87eb1e645fa3|||||||||||||||
 config|object|7a13eece26895731|||||||||||||||
+cores|object|f3582cdc107e111b|||||||||||||||
 do_sth|function|3cfd3c32456d79a5|||||||||||||||
 fetch_wdpa|function|5316542e28d7d66f|||||||||||||||
 get_oda_codes|function|cec97e281ca8ca24|||||||||||||||
@@ -10,23 +13,23 @@ get_oda_iso_codes|function|0ce69340dbd8462c|||||||||||||||
 get_oda_recipients|function|051c0d06b25193be|||||||||||||||
 get_oecd_isos|function|afbf5b9bf6fa6c2f|||||||||||||||
 get_wdpa|stem||3f5a040645490fc9|35a11257cc0eb527|-616271098||t19927.4257806442s||0|file|local|vector|||3.722|no nonmissing arguments to max returning Inf|could not find packages mapme.pipelines, mapme.indicators in library paths
-indicators_wdpa|stem|a123aaf06ccffa69|177b7a8369ed1260|df610d7e7fa9f40d|544118983|/home/rstudio/mapme/output/WDPA_WDOECM_Jul2024_Public_oecd_inds.gpkg|t19928.7696178812s||2.22506537052524e-308|file|local|vector|||31174.261|.. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .|ℹ In index 1.Caused by error in map2ℹ In index 10.ℹ With name calc_population_count.Caused by error in cat ignoring SIGPIPE signal
+indicators_wdpa|stem|a123aaf06ccffa69|177b7a8369ed1260|df610d7e7fa9f40d|544118983|/home/rstudio/mapme/output/WDPA_WDOECM_Jul2024_Public_oecd_inds.gpkg|t19928.7696178812s||2.22507382535103e-308|file|local|vector|||31174.261|.. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .|ℹ In index 1.Caused by error in map2ℹ In index 10.ℹ With name calc_population_count.Caused by error in cat ignoring SIGPIPE signal
 lcos|object|5dd38a94e3b78c28|||||||||||||||
 make_valid|function|f8be808f9c7219f1|||||||||||||||
 mapme_config_path|object|7a13eece26895731|||||||||||||||
 mapme_data_path|object|5095da075f476ddb|||||||||||||||
-mapme_opts|object|841ef86fb02d2211|||||||||||||||
+mapme_opts|object|373bb85a0c97a1b3|||||||||||||||
 mapme_raw_path|object|acee62485897b6b4|||||||||||||||
 mapmedir|object|5095da075f476ddb|||||||||||||||
 match_isos|function|572d4746d1afcfe0|||||||||||||||
 max_cores|object|f3582cdc107e111b|||||||||||||||
 oda_iso_codes|stem|dabe84b6cc76480c|b9ecf4bc5df95665|ee09ab9db558cb66|1800299912||t19929.2374966326s|eacad85ca1a63831|1055|rds|local|vector|||0.767||
 oda_recipients|stem|c6d2df97d5bb5662|3506c62a720c889d|8b83d21533d43942|1593928194||t19929.2374867254s|877db3f7e41bfab6|2477|rds|local|vector|||0.279||
-oecd_wdpas|stem|d5a44b1aecd5550e|0e7077b688b1ebf2|9f494b3e8b3a3ca0|-725069359|./data/WDPA_WDOECM_Jul2024_Public_oecd.parquet|t19929.2623547172s|c350af92a41a4408|510750634|file|local|vector|||65.668||
+oecd_wdpas|stem|d5a44b1aecd5550e|0e7077b688b1ebf2|9f494b3e8b3a3ca0|-725069359|./data/WDPA_WDOECM_Jul2024_Public_oecd.parquet|t19929.3673639065s|c350af92a41a4408|510750634|file|local|vector|||66.727||
 raw_wdpa|stem|3778f4712753cf84|62585bfdcd7e7fd7|089a7ba043574d65|-316263260|./data/WDPA_WDOECM_Jul2024_Public.parquet|t19929.2519898366s|c6482c257661f9e7|4790643309|file|local|vector|||395.047|GDAL Message 1 organizePolygons received a polygon with more than 100 parts. The processing may be really slow.  You can skip the processing by setting METHODSKIP, or only make it analyze counterclock wise parts by setting METHODONLY_CCW if you can assume that the outline of holes is counterclock wise defined|
-run_mapme_indicators|function|7536b7c226dacddd|||||||||||||||
+run_mapme_indicators|function|e7a658ef2353151d|||||||||||||||
 subset_wdpa|function|63eb6e3601fecae3|||||||||||||||
-target_isos|stem|e0e2333b4a7f7187|c8bbd56f14c6511d|d8c0c1ce2b7930db|-907082707||t19929.2615943692s|ffc82f3c9236def2|437|rds|local|vector|||0.001||
+target_isos|stem|e0e2333b4a7f7187|c8bbd56f14c6511d|d8c0c1ce2b7930db|-907082707||t19929.3665916136s|ffc82f3c9236def2|437|rds|local|vector|||0.001||
 test|stem|cabb93e5a41af405|af0c1c807d04aae8|ce286a58d9d20ddb|1839796588||t19927.451317921s|cc81a7537cb02258|59|rds|local|vector|||1.719||
 test_1|function|661d33d335237c4f|||||||||||||||
 testf|function|0b63e452e90185d1|||||||||||||||

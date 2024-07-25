@@ -60,4 +60,34 @@ make_valid <- function(path) {
   write_sf(data, dsn, layer_options = lcos[c(FALSE, TRUE)],
            driver = "Parquet", delete_dsn = TRUE)
   dsn
+
+}
+
+
+buffer_wdpa <- function(path, buffer_size = units::set_units(10, "km"), cores = 10) {
+
+  sf::sf_use_s2(TRUE)
+  dsn <- gsub(".parquet", sprintf("_buffer_%skm.parquet", as.character(buffer_size)), path)
+
+  data <- read_sf(path)
+  geoms <- st_geometry(data)
+  geoms <- split(geoms, ceiling(seq_along(geoms)/(length(geoms)/cores)))
+
+  method <- if(interactive()) future::multisession else future::multicore
+
+  future::plan(method, workers = cores)
+  buffers <- furrr::future_map(geoms, function(x){
+    hull <- st_convex_hull(x)
+    buffer <- st_buffer(hull, dist = buffer_size)
+    buffer <- sapply(1:length(x), function(i) st_difference(buffer[i], hull[i]))
+    st_as_sfc(buffer)
+  })
+  future::plan(future::sequential)
+
+  buffers <- do.call(c, buffers)
+  st_geometry(data) <- st_sfc(buffers, crs = st_crs(data))
+  write_sf(data, dsn, driver = "Parquet", delete_dsn = TRUE,
+           layer_options = lcos[c(FALSE, TRUE)])
+  dsn
+
 }

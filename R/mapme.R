@@ -1,8 +1,9 @@
 run_mapme_indicators <- function(
     input,
+    config,
     opts) {
 
-  config <- readLines(opts$mapme_config)
+  config <- readLines(config)
   output <- gsub(".parquet", "_indicators.gpkg", input)
   config <- gsub("\\$input", input, config)
   config <- gsub("\\$output", output, config)
