@@ -686,14 +686,14 @@
     },
     "mapme.biodiversity": {
       "Package": "mapme.biodiversity",
-      "Version": "0.8.0.9005",
+      "Version": "0.8.0.9007",
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "mapme.biodiversity",
       "RemoteUsername": "mapme-initiative",
       "RemoteRef": "pre-chunk",
-      "RemoteSha": "bdf347530391cbf8850fbbf627e3fbada729aaf1",
+      "RemoteSha": "ab7b7be3b8dcada5625d91b5116c95a7673f3671",
       "Requirements": [
         "R",
         "dplyr",
@@ -707,7 +707,7 @@
         "tibble",
         "tidyr"
       ],
-      "Hash": "e5d545f681017fd1a3e0c07a4694432c"
+      "Hash": "e9757c440e43ededc5d7b4ab1b0c29dc"
     },
     "mapme.indicators": {
       "Package": "mapme.indicators",
@@ -1051,7 +1051,7 @@
       "RemoteRepo": "sf",
       "RemoteUsername": "r-spatial",
       "RemoteRef": "HEAD",
-      "RemoteSha": "4ba1f3cacab99837680f3bbee36f74179c2010d9",
+      "RemoteSha": "6e13be9191ec202800205819c04b43e5942eb381",
       "Requirements": [
         "DBI",
         "R",
@@ -1068,7 +1068,7 @@
         "units",
         "utils"
       ],
-      "Hash": "831b7c75997c642a8d22fc8fa9ec0fe7"
+      "Hash": "6ac113456eebad27389e68f562068b1a"
     },
     "sp": {
       "Package": "sp",
