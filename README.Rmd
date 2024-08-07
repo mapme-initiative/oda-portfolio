@@ -23,8 +23,8 @@ to calculated indicators for all protected areas within countries that received
 official development aid by OECD member countries.
 
 
-```{r targets, echo=FALSE, message=FALSE}
-targets::tar_visnetwork()
+```{r, results = "asis", echo = FALSE}
+cat(c("```mermaid", targets::tar_mermaid(), "```"), sep = "\n")
 ```
 
 
