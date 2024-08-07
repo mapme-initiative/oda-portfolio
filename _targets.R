@@ -90,6 +90,11 @@ list(
     command = buffer_wdpa(oecd_wdpas, units::set_units(10, "km"), cores),
     format = "file"
   ),
+  tar_target(
+    name = buffer_50km,
+    command = buffer_wdpa(oecd_wdpas, units::set_units(50, "km"), cores),
+    format = "file"
+  ),
   # -------------------------------------------------------------------------- #
   # indicator calculations
   tar_target(
@@ -100,6 +105,11 @@ list(
   tar_target(
     name = indicators_buffer10km,
     command = run_mapme_indicators(buffer_10km, config_buffers, mapme_opts),
+    format = "file"
+  ),
+  tar_target(
+    name = indicators_buffer50km,
+    command = run_mapme_indicators(buffer_50km, config_buffers, mapme_opts),
     format = "file"
   )
 )

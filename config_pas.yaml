@@ -51,7 +51,7 @@ indicators:
       min_cover: 30
       min_size: 1
     options:
-      chunksize: 50000
+      chunksize: 100000
   calc_biodiversity_intactness_index:
     options:
       chunksize: 50000
@@ -97,4 +97,4 @@ indicators:
       stats: [min, mean, median, sd, max, sum]
       engine: exactextract
     options:
-      chunksize: 500000
+      chunksize: 5000000

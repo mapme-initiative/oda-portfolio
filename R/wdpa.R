@@ -91,3 +91,4 @@ buffer_wdpa <- function(path, buffer_size = units::set_units(10, "km"), cores = 
   dsn
 
 }
+
