@@ -23,12 +23,12 @@ to calculated indicators for all protected areas within countries that received
 official development aid by OECD member countries.
 
 
-```{r targets, echo=FALSE, message=FALSE}
-targets::tar_visnetwork()
+```{r targets, results = "asis", echo = FALSE}
+cat(c("```mermaid", targets::tar_mermaid(), "```"), sep = "\n")
 ```
 
 
-To run the pipeline adjust `_targets.R` and `config-oecd-countries.yaml` 
+To run the pipeline adjust `_targets.R` and `config.yaml` 
 to your local settings and then run the following from a shell:
 
 ```shell
