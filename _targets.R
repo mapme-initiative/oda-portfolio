@@ -1,5 +1,6 @@
 # Load packages required to define the pipeline:
 library(targets)
+library(landscapemetrics)
 
 # adjust these variables to your local setup
 cores <- 10
