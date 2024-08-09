@@ -1,6 +1,5 @@
 # Load packages required to define the pipeline:
 library(targets)
-library(landscapemetrics)
 
 # adjust these variables to your local setup
 cores <- 10
@@ -26,6 +25,7 @@ tar_option_set(
     "mapme.biodiversity",
     "mapme.pipelines",
     "mapme.indicators",
+    "landscapemetrics",
     "future",
     "furrr",
     "sf",
