@@ -811,14 +811,14 @@
     },
     "mapme.biodiversity": {
       "Package": "mapme.biodiversity",
-      "Version": "0.8.0.9007",
+      "Version": "0.8.0.9008",
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "mapme.biodiversity",
       "RemoteUsername": "mapme-initiative",
-      "RemoteRef": "pre-chunk",
-      "RemoteSha": "ab7b7be3b8dcada5625d91b5116c95a7673f3671",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "f19b04453bbb78088d736c2b210c46f89b13a33f",
       "Requirements": [
         "R",
         "dplyr",
@@ -832,7 +832,7 @@
         "tibble",
         "tidyr"
       ],
-      "Hash": "e9757c440e43ededc5d7b4ab1b0c29dc"
+      "Hash": "867228e675439a0106461b0819bd0717"
     },
     "mapme.indicators": {
       "Package": "mapme.indicators",
