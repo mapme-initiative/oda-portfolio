@@ -62,39 +62,39 @@ indicators:
     args:
       type: all
       engine: exactextract
-      stats: [min, mean, median, sd, max, sum]
+      stats: [min, mean, median, stdev, max, sum]
     options:
       chunksize: 500000
   calc_vul_carbon:
     args:
       type: all
       engine: exactextract
-      stats: [min, mean, median, sd, max, sum]
+      stats: [min, mean, median, stdev, max, sum]
     options:
       chunksize: 500000
   calc_man_carbon:
     args:
       type: all
       engine: exactextract
-      stats: [min, mean, median, sd, max, sum]
+      stats: [min, mean, median, stdev, max, sum]
     options:
       chunksize: 500000
   calc_humanfootprint:
     args:
-      stats: [min, mean, median, sd, max, sum]
+      stats: [min, mean, median, stdev, max, sum]
       engine: exactextract
     options:
       chunksize: 50000
   calc_species_richness:
     args:
-      stats: [min, mean, median, sd, max, sum]
+      stats: [min, mean, median, stdev, max, sum]
       engine: exactextract
   calc_key_biodiversity_area:
     options:
       chunksize: 5000000
   calc_population_count:
     args:
-      stats: [min, mean, median, sd, max, sum]
+      stats: [min, mean, median, stdev, max, sum]
       engine: exactextract
     options:
       chunksize: 500000
