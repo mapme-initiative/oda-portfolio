@@ -27,7 +27,6 @@ read_portfolio_data <- function(filename) {
   dat <- st_make_valid(dat)
   dat <- dat [st_is_valid(dat), ]
   print(sprintf("After removing invalid geometries: %s rows", nrow(dat)))
-  dat <- head(dat, 10)
 
   dsn <- gsub(".gpkg", "_input.gpkg", basename(filename))
   write_sf(dat, dsn, delete_dsn = TRUE)
