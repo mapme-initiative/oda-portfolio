@@ -22,6 +22,8 @@ The goal of oda-portfolio is to establish a pipeline with the `{targets}` packag
 to calculated indicators for all protected areas within countries that received
 official development aid by OECD member countries.
 
+This branch was created for processing the FZ portfolio data.
+
 
 ```{r, results = "asis", echo = FALSE}
 cat(c("```mermaid", targets::tar_mermaid(), "```"), sep = "\n")

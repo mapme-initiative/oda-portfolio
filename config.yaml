@@ -3,9 +3,9 @@ output: $output
 datadir: $datadir
 batchsize: $batch_size
 options:
-  overwrite: false
+  overwrite: true
   maxcores: $max_cores
-  progress: true
+  progress: false
 
 resources:
   get_gfw_treecover:

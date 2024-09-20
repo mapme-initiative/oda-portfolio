@@ -4,4 +4,6 @@
 .httr-oauth
 .DS_Store
 .quarto
+*.gpkg
 data
+mapme_opts.yaml
