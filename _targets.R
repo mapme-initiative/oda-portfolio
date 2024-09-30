@@ -1,14 +1,16 @@
 # Load packages required to define the pipeline:
 library(targets)
-library(yaml)
+readRenviron(".env")
+options(timeout = 600)
+options(future.globals.maxSize = 1.0 * 1e9)
 
 # adjust these variables to your local setup
-mapme_opts <- read_yaml("mapme_opts.yaml")
-expected_mapme_opts <- c("outdir", "rawdir", "input_data", "mapme_config",
-                         "batch_size", "max_cores")
-stopifnot(all(expected_mapme_opts %in% names(mapme_opts)))
-Sys.setenv("delete_dsn" = TRUE)
-
+mapme_opts <- list(
+  outdir = "/home/rstudio/mapme/data",
+  rawdir = "/home/rstudio/mapme/raw",
+  batch_size = 50000,
+  max_cores = 10
+)
 
 #----------- do not change below this line -------------#
 
@@ -28,13 +30,45 @@ tar_source("./R")
 # Replace the target list below with your own:
 list(
   tar_target(
-    name = fz_portfolio,
-    command = read_portfolio_data(mapme_opts$input_data),
+    name = config_file,
+    command = "config.yaml",
     format = "file"
   ),
   tar_target(
-    name = indicators_wdpa,
-    command = run_mapme_indicators(fz_portfolio, mapme_opts),
+    name = input_file,
+    command = "data/data_for_bmz_report.gpkg",
+    format = "file"
+  ),
+  tar_target(
+    name = activity_data,
+    command = read_activity_data(input_file)
+  ),
+  tar_target(
+    name = unique_locations,
+    command = split_location_data(activity_data, gsub(".gpkg$", "unique_locations.gpkg", input_file)),
+    format = "file"
+  ),
+  tar_target(
+    name = indicators_locations,
+    command = run_mapme_indicators(unique_locations, config_file, mapme_opts),
+    format = "file"
+  ),
+  tar_target(
+    name = summarised_indicators,
+    command = summarise_indicators(indicators_locations)
+  ),
+  tar_target(
+    name = activites_enriched,
+    command = enrich_wpdas(activity_data, summarised_indicators)
+  ),
+  tar_target(
+    name = excel_output, 
+    command = output_xlsx(activites_enriched, gsub(".gpkg$", "_enriched.xlsx", input_file)),
+    format = "file"
+  ),
+  tar_target(
+    name = gpkg_output, 
+    command = output_gpkg(activites_enriched, gsub(".gpkg$", "_enriched.gpkg", input_file)),
     format = "file"
   )
 )

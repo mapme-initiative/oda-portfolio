@@ -7,3 +7,5 @@
 *.gpkg
 data
 mapme_opts.yaml
+.env
+renv
