@@ -1,23 +1,23 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-activites_enriched|stem|c77db80b2f14be36|d47d6390b778aeab|8a6b3477caa843cf|399537530||t19995.515267818s|26c474cadb7b0abd|75030044|rds|local|vector|||0.06||
-activity_data|stem|ab36dd98997514ab|31a9712457a4feb3|b5523a23db71de08|1576329300||t19995.5008657695s|cd53395608d5da4a|74956408|rds|local|vector|||29.203|st_centroid assumes attributes are constant over geometries|
-config_file|stem|c386c4f9d623d0c3|29950cbe68ebe964|2c530c1562a7fbd1|-615108176|config.yaml|t19995.397980789s|44fefbc87cc9215c|2129|file|local|vector|||2.781||
+activites_enriched|stem|9410e57eb51d4955|d47d6390b778aeab|4ac1c07a65ece7fd|399537530||t19997.4220014134s|7691b33879dcbe54|61065676|rds|local|vector|||0.094||
+activity_data|stem|412472d4f2c7d71a|31a9712457a4feb3|15b4fdd2bb2f233b|1576329300||t19997.4087215078s|9f428659ceb0b635|61011615|rds|local|vector|||26.02|st_centroid assumes attributes are constant over geometries|
+config_file|stem|c386c4f9d623d0c3|29950cbe68ebe964|2c530c1562a7fbd1|-615108176|config.yaml|t19996.4267347614s|44fefbc87cc9215c|2129|file|local|vector|||2.781||
 data_enriched|stem|6026f59e5b2b750b|ae780239aef19a7a|797e6d14e0d26d65|540244161||t19995.3772409573s|4b7172f6b9ad9753|73634037|rds|local|vector|||0.949||
 enrich_org_data|stem|4a2bb75d10f21c02|314078f91f94dd11|d2f690549dfd6e54|2044719217|./data/data_for_bmz_report_enriched.xlsx|t19994.3734177507s|0f8e1b7bd33fc165|499027|file|local|vector|||2.937||
 enrich_wpdas|function|2353dd3ab9661894|||||||||||||||
-excel_output|stem|5bb1e2361a1fc133|3014d884bcec1050|16a60726a15ff9a1|1362697213|data/data_for_bmz_report_enriched.xlsx|t19995.5152847156s|062abf186f52daf1|544123|file|local|vector|||0.605||
+excel_output|stem|25e34d5ae40babba|5486db44183e1cf2|c60bef66ad28fc34|1362697213|data/bmz_pa_portfolio_2023_enriched.xlsx|t19997.4491188512s|21b26e1298f2bf08|553531|file|local|vector|||1.833||
 extend_xlsx|function|41e0133f60a448ef|||||||||||||||
 fz_portfolio|stem|2596353713cbe6d4|3a40775cf5f8ffb3|f304851521c474de|-1717815435||t19995.3821206807s|df791f8b247d2082|48970835|rds|local|vector|||32.502|st_centroid assumes attributes are constant over geometries|
-gpkg_output|stem|083747a161e7378b|acae868eef01d7f8|04f2daaa47ea88bd|-760544315|data/data_for_bmz_report_enriched.gpkg|t19995.5152773084s|6e9e6bec6b44bd6e|100450304|file|local|vector|||0.641||
+gpkg_output|stem|4e93f29d02087ce6|ac9c283b857c54e5|552cc9039666bf20|-760544315|data/bmz_pa_portfolio_2023_enriched.gpkg|t19997.4485463209s|c7d871112e7035dd|88264704|file|local|vector|||1.905||
 indicator_config|stem|c386c4f9d623d0c3|29950cbe68ebe964|2c530c1562a7fbd1|-1371212395|config.yaml|t19995.397980789s|44fefbc87cc9215c|2129|file|local|vector|||2.78||
-indicators_locations|stem|4cb2d5e0b42c029a|f123a74d87225ffc|ad9b60a45899e34e|2112190946|data/data_for_bmz_reportunique_locations_indicators.gpkg|t19995.5148279229s|bc825b3085b9f4b5|69279744|file|local|vector|||1205.36|incomplete final line found on config.yaml. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .|
+indicators_locations|stem|a8fab0cf16de1c0d|f123a74d87225ffc|d3be63232a9b59b2|2112190946|data/bmz_pa_portfolio_2023_unique_locations_indicators.gpkg|t19997.4216180908s|b8fdd3811d8d7b5c|56434688|file|local|vector|||1113.376|incomplete final line found on config.yaml. .. .. .. .. Error  Selected class not present in landscape.. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .|
 indicators_wdpa|stem|cb8bed0167807c21|5758ede07fc62be3|d38731011b9f1e18|544118983|./data/data_for_bmz_report_input_indicators.gpkg|t19995.3758527558s|d5c8dedab2c214ff|67792896|file|local|vector|||528.041|incomplete final line found on .config.yaml. .. .. .. Error in purrrmap1lengthgmw, functionj   ℹ In index 4.Caused by error in wk_handle.wk_wkb Loop 0 is not valid Edge 523 has duplicate vertex with edge 527. .. Error in purrrmap1lengthgmw, functionj   ℹ In index 4.Caused by error in wk_handle.wk_wkb Loop 0 is not valid Edge 11 has duplicate vertex with edge 15. .. .. .. .. Error in purrrmap1lengthgmw, functionj   ℹ In index 4.Caused by error in wk_handle.wk_wkb Loop 0 is not valid Edge 148 has duplicate vertex with edge 152. Error in purrrmap1lengthgmw, functionj   ℹ In index 4.Caused by error in wk_handle.wk_wkb Loop 0 is not valid Edge 131 has duplicate vertex with edge 135. Error in purrrmap1lengthgmw, functionj   ℹ In index 4.Caused by error in wk_handle.wk_wkb Loop 0 is not valid Edge 105 has duplicate vertex with edge 109. Error in purrrmap1lengthgmw, functionj   ℹ In index 4.Caused by error in wk_handle.wk_wkb Loop 0 is not valid Edge 960 has duplicate vertex with edge 964. .. .. Error in purrrmap1lengthgmw, functionj   ℹ In index 4.Caused by error in wk_handle.wk_wkb Loop 0 is not valid Edge 0 has duplicate vertex with edge 632. .. Error in purrrmap1lengthgmw, functionj   ℹ In index 4.Caused by error in wk_handle.wk_wkb Loop 0 is not valid Edge 25 has duplicate vertex with edge 29. Error in purrrmap1lengthgmw, functionj   ℹ In index 4.Caused by error in wk_handle.wk_wkb Loop 0 is not valid Edge 2 has duplicate vertex with edge 28. .. .. .. .. .. .. .. .. .. .. .. Error in purrrmap1lengthgmw, functionj   ℹ In index 4.Caused by error in wk_handle.wk_wkb Loop 0 is not valid Edge 6 has duplicate vertex with edge 78. Error in purrrmap1lengthgmw, functionj   ℹ In index 4.Caused by error in wk_handle.wk_wkb Loop 0 is not valid Edge 91 has duplicate vertex with edge 95. Error in pur|
-input_file|stem|bc990f3a4ee58b64|9035288d800cf399|2c530c1562a7fbd1|1993266094|data/data_for_bmz_report.gpkg|t19992.6496757137s|30a7bb23def7236d|106950656|file|local|vector|||0||
+input_file|stem|2f9069d53345de77|9f7813f82cdba0bd|2c530c1562a7fbd1|1993266094|data/bmz_pa_portfolio_2023.gpkg|t19997.4078439861s|a9cc82ce455a8cd2|88109056|file|local|vector|||2.793||
 locations|stem|08af281b7f8b1340|3a40775cf5f8ffb3|3d589fd86d6c9bbd|-1299370672|./data/data_for_bmz_report_locations.gpkg|t19995.4289577054s|cf08c8248e024f85|64618496|file|local|vector|||35.102|st_centroid assumes attributes are constant over geometries|
 locations_indicators|stem|b5786d368f7f823f|e5c2306d9fe56557|852d32e033c058bd|1105248099|./data/data_for_bmz_report_locations_indicators.gpkg|t19995.4171375175s||69414912|file|local|vector|||0.272|incomplete final line found on config.yaml|spds_existsoutput  optionsoverwrite  TRUE is not TRUE
-mapme_opts|object|3e25815f1550e29b|||||||||||||||
-output_gpkg|function|7e63107d34148189|||||||||||||||
-output_xlsx|function|649b52ca78bff3f7|||||||||||||||
+mapme_opts|object|4b624425d3053d72|||||||||||||||
+output_gpkg|function|94e3b89c43461484|||||||||||||||
+output_xlsx|function|eb29acdaa4ed381d|||||||||||||||
 read_activity_data|function|8f75a4361979cdb4|||||||||||||||
 read_portfolio_data|function|21e2b31d91656768|||||||||||||||
 run_mapme_indicators|function|4c6c87eee51579e0|||||||||||||||
@@ -33,5 +33,5 @@ summarise_mangroves|function|c3f2e374f442fa8f|||||||||||||||
 summarise_portfolio|function|c258f4a6b09bac49|||||||||||||||
 summarise_sr|function|11cb397e875124ae|||||||||||||||
 summarise_treeccover|function|5872ba737c3b01ce|||||||||||||||
-summarised_indicators|stem|45aabe176c5705b2|34b212b8fdb61b3a|918c7412fe1e1b4e|1491835701||t19995.5151813852s|404404c602c78184|48994459|rds|local|vector|||25.566||
-unique_locations|stem|326bc46184303d43|235d60947d8529f4|21e1a1c66805bda6|-1093428645|data/data_for_bmz_reportunique_locations.gpkg|t19995.5008760006s|85a4458469810164|64495616|file|local|vector|||0.857||
+summarised_indicators|stem|e6626f957339eb36|34b212b8fdb61b3a|159c4e2523708523|1491835701||t19997.4219286376s|e7bef6e3d66a8cdd|39397898|rds|local|vector|||22.895||
+unique_locations|stem|35cf866fffd11156|0bea0aa752e9980c|a4077e407643e2b5|-1093428645|data/bmz_pa_portfolio_2023_unique_locations.gpkg|t19997.4087280354s|478530f87aab7ac3|52166656|file|local|vector|||0.493||

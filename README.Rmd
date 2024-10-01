@@ -26,7 +26,7 @@ This branch was created for processing the FZ portfolio data.
 
 
 ```{r, results = "asis", echo = FALSE}
-cat(c("```mermaid", targets::tar_mermaid(), "```"), sep = "\n")
+cat(c("```mermaid", targets::tar_mermaid(targets_only = TRUE), "```"), sep = "\n")
 ```
 
 

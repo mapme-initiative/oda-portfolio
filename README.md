@@ -22,28 +22,26 @@ graph LR
   style Graph fill:#FFFFFF00,stroke:#000000;
   subgraph Legend
     direction LR
-    xf1522833a4d242c5([""Up to date""]):::uptodate --- xb3df25f36846e314([""Errored""]):::errored
-    xb3df25f36846e314([""Errored""]):::errored --- xd03d7c7dd2ddda2b([""Stem""]):::none
-    xd03d7c7dd2ddda2b([""Stem""]):::none --- xbecb13963f49e50b{{""Object""}}:::none
-    xbecb13963f49e50b{{""Object""}}:::none --- xeb2d7cac8a1ce544>""Function""]:::none
+    xf1522833a4d242c5([""Up to date""]):::uptodate --- xd03d7c7dd2ddda2b([""Stem""]):::none
   end
   subgraph Graph
     direction LR
-    xdab47f56eb6391e1(["fz_portfolio"]):::uptodate --> x9618f2e9856d1918(["indicators_wdpa"]):::errored
-    x04d189518bd5d6b0{{"mapme_opts"}}:::uptodate --> x9618f2e9856d1918(["indicators_wdpa"]):::errored
-    x976d8a71b32c2f2b>"run_mapme_indicators"]:::uptodate --> x9618f2e9856d1918(["indicators_wdpa"]):::errored
-    x04d189518bd5d6b0{{"mapme_opts"}}:::uptodate --> xdab47f56eb6391e1(["fz_portfolio"]):::uptodate
-    xa103919beeeaa1d5>"read_portfolio_data"]:::uptodate --> xdab47f56eb6391e1(["fz_portfolio"]):::uptodate
-    x016a9b304ce9de80{{"expected_mapme_opts"}}:::uptodate --> x016a9b304ce9de80{{"expected_mapme_opts"}}:::uptodate
+    x31d8d3daa8f8e034(["activites_enriched"]):::uptodate --> x87ba475ce69b80a8(["gpkg_output"]):::uptodate
+    x721addc77afbcf42(["input_file"]):::uptodate --> x87ba475ce69b80a8(["gpkg_output"]):::uptodate
+    x721addc77afbcf42(["input_file"]):::uptodate --> x9be9fe4c25e464e0(["activity_data"]):::uptodate
+    xd80c6efdd95a74a4(["indicators_locations"]):::uptodate --> x1ba9c4ef45365262(["summarised_indicators"]):::uptodate
+    x9be9fe4c25e464e0(["activity_data"]):::uptodate --> x901ac07110e697ee(["unique_locations"]):::uptodate
+    x721addc77afbcf42(["input_file"]):::uptodate --> x901ac07110e697ee(["unique_locations"]):::uptodate
+    x9be9fe4c25e464e0(["activity_data"]):::uptodate --> x31d8d3daa8f8e034(["activites_enriched"]):::uptodate
+    x1ba9c4ef45365262(["summarised_indicators"]):::uptodate --> x31d8d3daa8f8e034(["activites_enriched"]):::uptodate
+    x31d8d3daa8f8e034(["activites_enriched"]):::uptodate --> x79629de1855e879d(["excel_output"]):::uptodate
+    x721addc77afbcf42(["input_file"]):::uptodate --> x79629de1855e879d(["excel_output"]):::uptodate
+    x9909b451a6a56060(["config_file"]):::uptodate --> xd80c6efdd95a74a4(["indicators_locations"]):::uptodate
+    x901ac07110e697ee(["unique_locations"]):::uptodate --> xd80c6efdd95a74a4(["indicators_locations"]):::uptodate
   end
   classDef uptodate stroke:#000000,color:#ffffff,fill:#354823;
-  classDef errored stroke:#000000,color:#ffffff,fill:#C93312;
   classDef none stroke:#000000,color:#000000,fill:#94a4ac;
   linkStyle 0 stroke-width:0px;
-  linkStyle 1 stroke-width:0px;
-  linkStyle 2 stroke-width:0px;
-  linkStyle 3 stroke-width:0px;
-  linkStyle 9 stroke-width:0px;
 ```
 
 To run the pipeline adjust `_targets.R` and `config-oecd-countries.yaml`

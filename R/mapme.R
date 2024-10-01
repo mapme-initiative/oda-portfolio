@@ -71,14 +71,20 @@ enrich_wpdas <- function(org_data, sum_data) {
   
 }
 
-output_gpkg <- function(data, dsn) {
-  # dsn <- gsub(".gpkg$", "_enriched.gpkg", org_file)
+output_gpkg <- function(data, org_gpkg) {
+  dsn <- gsub(".gpkg$", "_enriched.gpkg", org_gpkg)
+  org_data <- read_sf(org_gpkg)
+  org_empty <- org_data[st_is_empty(org_data), ]
+  data <- st_as_sf(bind_rows(data, org_empty))
   st_write(data, dsn, delete_dsn = TRUE, append = FALSE)
   dsn
 }
 
-output_xlsx <- function(data, dsn) {
-  #   dsn <- gsub("gpkg$", "xlsx", dsn)
+output_xlsx <- function(data, org_gpkg) {
+  dsn <- gsub(".gpkg$", "_enriched.xlsx", org_gpkg)
+  org_data <- read_sf(org_gpkg)
+  org_empty <- org_data[st_is_empty(org_data), ]
+  data <- st_as_sf(bind_rows(data, org_empty))
   data <- st_drop_geometry(data)
   openxlsx2::write_xlsx(data, dsn, overwrite = TRUE)
   dsn

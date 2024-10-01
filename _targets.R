@@ -8,7 +8,7 @@ options(future.globals.maxSize = 1.0 * 1e9)
 mapme_opts <- list(
   outdir = "/home/rstudio/mapme/data",
   rawdir = "/home/rstudio/mapme/raw",
-  batch_size = 50000,
+  batch_size = 2500,
   max_cores = 10
 )
 
@@ -36,7 +36,7 @@ list(
   ),
   tar_target(
     name = input_file,
-    command = "data/data_for_bmz_report.gpkg",
+    command = "data/bmz_pa_portfolio_2023.gpkg",
     format = "file"
   ),
   tar_target(
@@ -45,7 +45,7 @@ list(
   ),
   tar_target(
     name = unique_locations,
-    command = split_location_data(activity_data, gsub(".gpkg$", "unique_locations.gpkg", input_file)),
+    command = split_location_data(activity_data, gsub(".gpkg$", "_unique_locations.gpkg", input_file)),
     format = "file"
   ),
   tar_target(
@@ -63,12 +63,12 @@ list(
   ),
   tar_target(
     name = excel_output, 
-    command = output_xlsx(activites_enriched, gsub(".gpkg$", "_enriched.xlsx", input_file)),
+    command = output_xlsx(activites_enriched, input_file),
     format = "file"
   ),
   tar_target(
     name = gpkg_output, 
-    command = output_gpkg(activites_enriched, gsub(".gpkg$", "_enriched.gpkg", input_file)),
+    command = output_gpkg(activites_enriched, input_file),
     format = "file"
   )
 )
