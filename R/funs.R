@@ -86,27 +86,3 @@ summarise_kba <- function(x) {
       names_from = variable
     )
 }
-
-summarise_acled <- function(x) {
-  if (is.null(x)) return(NULL)
-  tibble::tibble(
-    fatalities_acled_2014_2023 = x |>
-      dplyr::pull(value) |>
-      sum()
-  )
-}
-
-# find_unique_cols <- function(data) {
-#   
-#   data2 <- data |>
-#     st_drop_geometry() |>
-#     dplyr::group_split(location_name, WDPAID)
-#   
-#     unique_cols <- lapply(
-#       data2, 
-#       \(x) names(x)[sapply(x, \(y) length(unique(y)) == 1)]
-#     )
-#     
-#     Reduce(intersect, unique_cols)
-# }
-

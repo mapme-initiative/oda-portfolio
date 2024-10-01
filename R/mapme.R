@@ -51,7 +51,6 @@ summarise_indicators <- function(filename) {
   data$humanfootprint <- lapply(data$humanfootprint, summarise_hfp)
   data$species_richness <- lapply(data$species_richness, summarise_sr)
   data$key_biodiversity_areas <- lapply(data$key_biodiversity_areas, summarise_kba)
-  data$fatalities_acled <- lapply(data$fatalities_acled, summarise_acled)
   cols <- mapme.biodiversity:::.indicators_col(data)
   data <- tidyr::unnest(data, cols = names(cols))
   data
