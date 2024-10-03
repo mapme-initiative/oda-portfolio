@@ -1,7 +1,7 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 activites_enriched|stem|b5773ec38678e24b|d47d6390b778aeab|c00b3d06122a1eb3|399537530||t19998.32014003s|39b1550fafc0c04f|61789614|rds|local|vector|||0.091||
 activity_data|stem|c2ac469b53b23a84|31a9712457a4feb3|e37bfbff555d7771|1576329300||t19998.3084280441s|1734e9536580d530|61732559|rds|local|vector|||26.298|st_centroid assumes attributes are constant over geometries|
-analyse_pas|function|d46261aee8958977|||||||||||||||
+analyse_pas|function|5167e4c3af1f7921|||||||||||||||
 config_file|stem|b1e44cb909a3ff6b|29950cbe68ebe964|2c530c1562a7fbd1|-615108176|config.yaml|t19997.5130150181s|aa7c037db756f5f2|1462|file|local|vector|||2.801||
 data_enriched|stem|6026f59e5b2b750b|ae780239aef19a7a|797e6d14e0d26d65|540244161||t19995.3772409573s|4b7172f6b9ad9753|73634037|rds|local|vector|||0.949||
 enrich_org_data|stem|4a2bb75d10f21c02|314078f91f94dd11|d2f690549dfd6e54|2044719217|./data/data_for_bmz_report_enriched.xlsx|t19994.3734177507s|0f8e1b7bd33fc165|499027|file|local|vector|||2.937||
@@ -19,7 +19,7 @@ locations_indicators|stem|b5786d368f7f823f|e5c2306d9fe56557|852d32e033c058bd|110
 mapme_opts|object|4b624425d3053d72|||||||||||||||
 output_gpkg|function|94e3b89c43461484|||||||||||||||
 output_xlsx|function|eb29acdaa4ed381d|||||||||||||||
-pa_analysis|stem|8cb33d8f30541ecd|e78371c1353ad1ea|7e35638bf23669df|33556947|data/bmz_pa_portfolio_2023_pa_analysis.xlsx|t19999.2751884106s|694cd558a54a7891|6081|file|local|vector|||1.531||
+pa_analysis|stem|95f04eb2cbfb75c2|e78371c1353ad1ea|fe32543a6deb5095|33556947|data/bmz_pa_portfolio_2023_pa_analysis.xlsx|t19999.29005128s|ab8b6ab7f3b10597|6115|file|local|vector|||1.524||
 read_activity_data|function|8f75a4361979cdb4|||||||||||||||
 read_portfolio_data|function|21e2b31d91656768|||||||||||||||
 run_mapme_indicators|function|4c6c87eee51579e0|||||||||||||||
