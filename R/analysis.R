@@ -31,7 +31,7 @@ analyse_pas <- function(data, input_file) {
     distinct() |>
     group_by(location_id) |>
     summarise(
-      donor = ifelse(n()>1, "both", donor),
+      donor = ifelse(length(unique(donor)) > 1, "both", donor),
       area_ha = ifelse(n()>1, area_ha[1], area_ha),
       iplc = max(iplc),
       ramsar = max(ramsar),
