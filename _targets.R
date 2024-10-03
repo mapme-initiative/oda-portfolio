@@ -19,6 +19,8 @@ tar_option_set(
   packages = c(
     "mapme.biodiversity",
     "mapme.pipelines",
+    "openxlsx2",
+    "tidyr",
     "dplyr",
     "sf"
   )
@@ -64,6 +66,11 @@ list(
   tar_target(
     name = excel_output, 
     command = output_xlsx(activites_enriched, input_file),
+    format = "file"
+  ),
+  tar_target(
+    name = pa_analysis,
+    command = analyse_pas(activites_enriched, input_file),
     format = "file"
   ),
   tar_target(
