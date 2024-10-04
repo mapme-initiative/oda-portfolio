@@ -6,10 +6,7 @@ read_activity_data <- function(filename) {
   data <- st_make_valid(data, split_crossing_edges = TRUE)
   data <- data [st_is_valid(data), ]
   print(sprintf("After removing invalid geometries: %s rows", nrow(data)))
-  centroids_org <- st_geometry(st_centroid(data))
-  centroids_unique <- st_sfc(unique(centroids_org), crs=st_crs(centroids_org))
-  location_ids <- unlist(st_equals(centroids_org, centroids_unique))
-  data$location_id <- location_ids
+  stopifnot("location_id" %in% names(data))
   print(sprintf("With number of unique locations: %s", length(unique(data$location_id))))
   data
 }
