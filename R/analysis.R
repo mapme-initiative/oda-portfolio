@@ -1,5 +1,3 @@
-
-
 analyse_pas <- function(data, input_file) {
   
   data_empty <- data[st_is_empty(data), ]
@@ -7,7 +5,7 @@ analyse_pas <- function(data, input_file) {
   
   pa_data <- data |>
     st_drop_geometry() |>
-    select(location_id, donor, area_ha, designation, iplc_status, country) |>
+    select(location_id, donor, area_ha, designation, iplc_status, country, treecover_ha_2023) |>
     mutate(
       iplc = case_when(
         grepl("^Yes", iplc_status) ~ 1,
@@ -37,6 +35,7 @@ analyse_pas <- function(data, input_file) {
       ramsar = max(ramsar),
       mab = max(mab),
       wh = max(wh),
+      treecover_area_2023 = ifelse(n()>1, treecover_ha_2023[1], treecover_ha_2023),
       country = country[1]
     ) |>
     ungroup()
@@ -158,13 +157,23 @@ analyse_pas <- function(data, input_file) {
     total = nrow(data_empty)
   )
   
+  ###################### treecover 2023 
+  treecover_area_2023 <- tibble(
+    var = "treecover_area_2023",
+    kfw = sum(pa_data$treecover_area_2023[is_kfw], na.rm = TRUE),
+    giz = sum(pa_data$treecover_area_2023[is_giz], na.rm = TRUE),
+    both = sum(pa_data$treecover_area_2023[is_both], na.rm = TRUE),
+    total =sum(pa_data$treecover_area_2023, na.rm = TRUE)
+  )
+  
   results <- do.call(rbind, list(
     counts, areas, countries,
     ramsar_count, ramsar_area,
     mab_count, mab_area,
     whs_count, whs_area,
     iplc_count, iplc_area,
-    unmatched
+    unmatched,
+    treecover_area_2023
   ))
   
   dsn <- gsub(".gpkg", "_pa_analysis.xlsx", input_file)
