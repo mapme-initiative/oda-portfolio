@@ -61,7 +61,7 @@ list(
   ),
   tar_target(
     name = activites_enriched,
-    command = enrich_wpdas(activity_data, summarised_indicators)
+    command = enrich_wpdas(activity_data, summarised_indicators, input_file)
   ),
   tar_target(
     name = excel_output, 

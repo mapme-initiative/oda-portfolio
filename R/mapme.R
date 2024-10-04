@@ -12,7 +12,6 @@ read_activity_data <- function(filename) {
 }
 
 split_location_data <- function(data, dsn) {
-  
   stopifnot("location_id" %in% names(data))
   data <- data[!duplicated(data$location_id, incomparables = NA), "location_id"]
   write_sf(data, dsn)
@@ -53,34 +52,34 @@ summarise_indicators <- function(filename) {
   data
 }
 
-enrich_wpdas <- function(org_data, sum_data) {
+enrich_wpdas <- function(activites, sum_data, org_gpkg) {
   
   data <- dplyr::left_join(
-    org_data,
+    activites,
     st_drop_geometry(sum_data),
     by = "location_id"
   )
   
   drop_vars <- c("assetid")
   data <- dplyr::select(data, -!!drop_vars)
+  
+  # merge empty geometries to the data
+  org_data <- read_sf(org_gpkg)
+  org_empty <- org_data[st_is_empty(org_data), ]
+  data <- st_as_sf(bind_rows(data, org_empty))
+  
   data
   
 }
 
 output_gpkg <- function(data, org_gpkg) {
   dsn <- gsub(".gpkg$", "_enriched.gpkg", org_gpkg)
-  org_data <- read_sf(org_gpkg)
-  org_empty <- org_data[st_is_empty(org_data), ]
-  data <- st_as_sf(bind_rows(data, org_empty))
   st_write(data, dsn, delete_dsn = TRUE, append = FALSE)
   dsn
 }
 
 output_xlsx <- function(data, org_gpkg) {
   dsn <- gsub(".gpkg$", "_enriched.xlsx", org_gpkg)
-  org_data <- read_sf(org_gpkg)
-  org_empty <- org_data[st_is_empty(org_data), ]
-  data <- st_as_sf(bind_rows(data, org_empty))
   data <- st_drop_geometry(data)
   openxlsx2::write_xlsx(data, dsn, overwrite = TRUE)
   dsn
