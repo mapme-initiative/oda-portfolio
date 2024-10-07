@@ -1,0 +1,15 @@
+---
+title: "Datenbedarf für BMZ-SG-Berichtserstattung"
+date:  "`r format(Sys.time(), '%Y-%m-%d')`"
+output: word_document
+params:
+  data: NULL
+---
+
+
+```{r table, echo=FALSE}
+flextable::flextable(params$data, cwidth = 1.5) |>
+  flextable::bold(part = "header") |>
+  flextable::bold(j = 1)
+```
+

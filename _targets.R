@@ -69,13 +69,20 @@ list(
     format = "file"
   ),
   tar_target(
-    name = pa_analysis,
-    command = analyse_pas(activites_enriched, input_file),
-    format = "file"
-  ),
-  tar_target(
     name = gpkg_output, 
     command = output_gpkg(activites_enriched, input_file),
     format = "file"
+  ),
+  tar_target(
+    name = pa_data,
+    command = analyse_pas(activites_enriched)
+  ),
+  tar_target(
+    name = pa_output_excel,
+    command = pa_xlsx(pa_data, input_file)
+  ),
+  tar_target(
+    name = pa_output_word,
+    command = pa_word(pa_data, input_file)
   )
 )

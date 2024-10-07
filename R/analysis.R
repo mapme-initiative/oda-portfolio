@@ -1,4 +1,4 @@
-analyse_pas <- function(data, input_file) {
+analyse_pas <- function(data) {
   
   data_empty <- data[st_is_empty(data), ]
   data <- data[!st_is_empty(data), ]
@@ -166,7 +166,7 @@ analyse_pas <- function(data, input_file) {
     total =sum(pa_data$treecover_area_2023, na.rm = TRUE)
   )
   
-  results <- do.call(rbind, list(
+  do.call(rbind, list(
     counts, areas, countries,
     ramsar_count, ramsar_area,
     mab_count, mab_area,
@@ -176,7 +176,36 @@ analyse_pas <- function(data, input_file) {
     treecover_area_2023
   ))
   
+}
+
+pa_xlsx <- function(data, input_file) {
   dsn <- gsub(".gpkg", "_pa_analysis.xlsx", input_file)
-  openxlsx2::write_xlsx(results, dsn)
+  openxlsx2::write_xlsx(data, dsn)
   dsn
+}
+
+pa_word <- function(data, input_file) {
+  dsn <- gsub(".gpkg", "_pa_analysis.docx", input_file)
+  data <- data |>
+    mutate(across(where(is.numeric), round))
+  vars <- tribble(
+    ~old, ~new,
+    "pa_counts", "Anzahl SG",
+    "pa_area", "Fläche (ha)",
+    "countries", "Anzahl Länder",
+    "ramsar_count", "Anzahl RAMSAR-sites",
+    "ramsar_area", "Fläche RAMSAR (ha)",
+    "mab_count", "Anzahl MAB-sites",
+    "mab_area", "Fläche MAB (ha)",
+    "whs_count", "Anzahl WHS-sites",
+    "whs_area", "Fläche WHS (ha)",
+    "iplc_count", "Anzahl IPLC-sites",
+    "iplc_area", "Fläche IPLC (ha)",
+    "treecover_area_2023", "Waldfläche 2023 (GFW - ha)",
+    "unmatched_activities", "Anzahl Projekt-Maßnahmen ohne Zuordnung"
+  )
+  
+  data$var <- vars$new[match(vars$old, data$var)]
+  names(data) <- c(" ", "KfW", "GIZ", "Gemeinsam (Überlappung) GIZ/KfW", "BMZ gesamt (KfW+GIZ)")
+  rmarkdown::render("template.Rmd", output_file = dsn, params = list(data = data))
 }
