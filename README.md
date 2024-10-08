@@ -26,14 +26,17 @@ graph LR
   end
   subgraph Graph
     direction LR
+    x721addc77afbcf42(["input_file"]):::uptodate --> x16b7b3078fdccc78(["pa_output_word"]):::uptodate
+    xa355481dcc1a3b39(["pa_data"]):::uptodate --> x16b7b3078fdccc78(["pa_output_word"]):::uptodate
+    x31d8d3daa8f8e034(["activites_enriched"]):::uptodate --> xa355481dcc1a3b39(["pa_data"]):::uptodate
     x31d8d3daa8f8e034(["activites_enriched"]):::uptodate --> x87ba475ce69b80a8(["gpkg_output"]):::uptodate
     x721addc77afbcf42(["input_file"]):::uptodate --> x87ba475ce69b80a8(["gpkg_output"]):::uptodate
     x721addc77afbcf42(["input_file"]):::uptodate --> x9be9fe4c25e464e0(["activity_data"]):::uptodate
     xd80c6efdd95a74a4(["indicators_locations"]):::uptodate --> x1ba9c4ef45365262(["summarised_indicators"]):::uptodate
     x9be9fe4c25e464e0(["activity_data"]):::uptodate --> x901ac07110e697ee(["unique_locations"]):::uptodate
     x721addc77afbcf42(["input_file"]):::uptodate --> x901ac07110e697ee(["unique_locations"]):::uptodate
-    x31d8d3daa8f8e034(["activites_enriched"]):::uptodate --> x01c0df6efcc597df(["pa_analysis"]):::uptodate
-    x721addc77afbcf42(["input_file"]):::uptodate --> x01c0df6efcc597df(["pa_analysis"]):::uptodate
+    x721addc77afbcf42(["input_file"]):::uptodate --> xf39fc5dec6b9a973(["pa_output_excel"]):::uptodate
+    xa355481dcc1a3b39(["pa_data"]):::uptodate --> xf39fc5dec6b9a973(["pa_output_excel"]):::uptodate
     x9be9fe4c25e464e0(["activity_data"]):::uptodate --> x31d8d3daa8f8e034(["activites_enriched"]):::uptodate
     x721addc77afbcf42(["input_file"]):::uptodate --> x31d8d3daa8f8e034(["activites_enriched"]):::uptodate
     x1ba9c4ef45365262(["summarised_indicators"]):::uptodate --> x31d8d3daa8f8e034(["activites_enriched"]):::uptodate
