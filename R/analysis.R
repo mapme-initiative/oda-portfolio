@@ -206,6 +206,7 @@ pa_word <- function(data, input_file) {
   )
   
   data$var <- vars$new[match(vars$old, data$var)]
+  data <- data[match(vars$new, data$var), ]
   names(data) <- c(" ", "KfW", "GIZ", "Gemeinsam (Überlappung) GIZ/KfW", "BMZ gesamt (KfW+GIZ)")
   rmarkdown::render("template.Rmd", output_file = dsn, params = list(data = data))
 }

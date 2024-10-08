@@ -1,15 +1,23 @@
 ---
-title: "Datenbedarf für BMZ-SG-Berichtserstattung"
+title: ""
 date:  "`r format(Sys.time(), '%Y-%m-%d')`"
-output: word_document
+output: 
+  word_document:
+    reference_docx: template.docx
 params:
   data: NULL
 ---
 
+## Datenbedarf für BMZ-SG-Berichtserstattung
 
 ```{r table, echo=FALSE}
-flextable::flextable(params$data, cwidth = 1.5) |>
-  flextable::bold(part = "header") |>
-  flextable::bold(j = 1)
+library(flextable)
+flextable(params$data, cwidth = 1.2, cheight = 0.15) |>
+  hrule(rule = "atleast") |>
+  width(j = 1, width = 1.6) |> 
+  font(fontname = "Arial") |>
+  fontsize(size = 10) |>
+  bold(part = "header") |>
+  bold(j = 1) 
 ```
 

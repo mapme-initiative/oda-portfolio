@@ -22,8 +22,8 @@ output_xlsx|function|1b3904ec74bb6b18|||||||||||||||
 pa_analysis|stem|56f75718ded5164e|e78371c1353ad1ea|e4d80184bc4fcdad|33556947|data/bmz_pa_portfolio_2023_pa_analysis.xlsx|t20000.6238951408s|c552a3dec3e9c0c2|6199|file|local|vector|||1.455||
 pa_data|stem|3d593f050b71bc28|eb423bb4cf00bc8b|3e43edda35e80f06|-1817921912||t20003.6853123036s|7c99faa47fac9def|576|rds|local|vector|||1.596||
 pa_output_excel|stem|5b50f4b36d1d1426|6410997afae7310b|24e46922f3b79bf6|-831140797||t20003.6853141091s|e441caf5cebd5545|94|rds|local|vector|||0.115||
-pa_output_word|stem|a4dccf9d5cfe8ec9|9fa089a578d248e3|63705a598751ba1c|-108668965||t20003.7269328029s|6152842ab8c772f1|119|rds|local|vector|||0.393||
-pa_word|function|93ff625fc0d21738|||||||||||||||
+pa_output_word|stem|a4dccf9d5cfe8ec9|9fa089a578d248e3|f79a748997ee72b6|-108668965||t20004.2404925516s|6152842ab8c772f1|119|rds|local|vector|||0.41||
+pa_word|function|abc63474adc2eb56|||||||||||||||
 pa_xlsx|function|d4d2d6e5e7862942|||||||||||||||
 read_activity_data|function|4570acf6612db037|||||||||||||||
 read_portfolio_data|function|21e2b31d91656768|||||||||||||||
