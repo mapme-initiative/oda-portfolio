@@ -21,9 +21,9 @@ output_gpkg|function|a75a26aaf5a05759|||||||||||||||
 output_xlsx|function|1b3904ec74bb6b18|||||||||||||||
 pa_analysis|stem|56f75718ded5164e|e78371c1353ad1ea|e4d80184bc4fcdad|33556947|data/bmz_pa_portfolio_2023_pa_analysis.xlsx|t20000.6238951408s|c552a3dec3e9c0c2|6199|file|local|vector|||1.455||
 pa_data|stem|6abb416f48670af8|eb423bb4cf00bc8b|66e71be0568219f9|-1817921912||t20005.6043213348s|b0eab8b0dae8ef5e|572|rds|local|vector|||1.604||
-pa_output_excel|stem|e758b5f38672e8ef|6410997afae7310b|fb82f237694018de|-831140797|data/bmz_pa_portfolio_2023_pa_analysis.xlsx|t20005.5330056029s|0558c486245f2f62|6193|file|local|vector|||0.015||
-pa_output_word|stem|daebff751a510e56|9fa089a578d248e3|098f539e227cad4b|-108668965|/home/rstudio/mapme/oda-portfolio/data/bmz_pa_portfolio_2023_pa_analysis.docx|t20005.5330050011s|0bd53076c13f994a|28063|file|local|vector|||0.423||
-pa_table|stem|9c0aef6e0f02dbdf|3725d8057455d31f|bf91ced3b22cf02a|-423880550|data/bmz_pas_2023.xlsx|t20005.6043648984s|8f0ede036eeda3c6|234268|file|local|vector|||3.712|13 failed to parse.|
+pa_output_excel|stem|5b50f4b36d1d1426|6410997afae7310b|fb82f237694018de|-831140797||t20005.60655405s|e441caf5cebd5545|94|rds|local|vector|||0.138||
+pa_output_word|stem|a4dccf9d5cfe8ec9|9fa089a578d248e3|098f539e227cad4b|-108668965||t20005.6065524297s|6152842ab8c772f1|119|rds|local|vector|||0.435||
+pa_table|stem|acdcbb8c209628ba|3725d8057455d31f|bf91ced3b22cf02a|-423880550||t20005.6070360272s|a057b906461a46f0|75|rds|local|vector|||3.917|13 failed to parse.|
 pa_word|function|abc63474adc2eb56|||||||||||||||
 pa_xlsx|function|d4d2d6e5e7862942|||||||||||||||
 read_activity_data|function|4570acf6612db037|||||||||||||||
