@@ -10,7 +10,6 @@ subset_locs <- function(data) {
     group_by(location_id) |>
     summarise(geom = geom[1])
   
-  
   data2 <- st_drop_geometry(data) |>
     select(-c(team, abbreviation_project, location_name, activity_start_date,
               activity_status, collection_date, kml_file, kml_key))
@@ -23,8 +22,9 @@ subset_locs <- function(data) {
     summarise(
       bmz_nrs = paste0(bmz_nr, collapse = ";"),
       donor_kfw = any(grepl("KFW", donor)),
-      donor_giz = any(grepl("KFW", donor)),
-      post_2023 = any(as.Date(activity_end_date) >= as.Date("2023-12-31")),
+      donor_giz = any(grepl("GIZ", donor)),
+      post_kfw_2023 = any(activity_end_date[grepl("KFW", donor)] >= as.Date("2023-12-31")),
+      post_giz_2023 = any(activity_end_date[grepl("GIZ", donor)] >= as.Date("2023-12-31")),
       across(all_of(vars), ~.x[1], .names = "{.col}") # first match
     )
   

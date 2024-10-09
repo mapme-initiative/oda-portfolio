@@ -5,7 +5,7 @@ analyse_pas <- function(data) {
   
   pa_data <- data |>
     st_drop_geometry() |>
-    select(location_id, activity_end_date,  donor, area_ha, designation, iplc_status, country, treecover_ha_2023) |>
+    select(location_id, activity_end_date, donor, area_ha, designation, iplc_status, country, treecover_ha_2023) |>
     filter(as.Date(activity_end_date) >= as.Date("2023-12-31")) |>
     mutate(
       iplc = case_when(
@@ -37,7 +37,7 @@ analyse_pas <- function(data) {
       mab = max(mab),
       wh = max(wh),
       treecover_area_2023 = ifelse(n()>1, treecover_ha_2023[1], treecover_ha_2023),
-      country = country[1]
+      country = lapply(country, function(y) strsplit(y, ";")[[1]]) |> unlist() |> unique() |> paste0(collapse = ";")
     ) |>
     ungroup()
   
