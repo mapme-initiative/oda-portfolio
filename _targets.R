@@ -79,10 +79,17 @@ list(
   ),
   tar_target(
     name = pa_output_excel,
-    command = pa_xlsx(pa_data, input_file)
+    command = pa_xlsx(pa_data, input_file),
+    format = "file"
   ),
   tar_target(
     name = pa_output_word,
-    command = pa_word(pa_data, input_file)
+    command = pa_word(pa_data, input_file),
+    format = "file"
+  ),
+  tar_target(
+    name = pa_table,
+    command = subset_locs(activites_enriched),
+    format = "file"
   )
 )
