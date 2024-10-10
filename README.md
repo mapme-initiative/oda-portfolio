@@ -31,6 +31,7 @@ graph LR
     x31d8d3daa8f8e034(["activites_enriched"]):::uptodate --> xa355481dcc1a3b39(["pa_data"]):::uptodate
     x31d8d3daa8f8e034(["activites_enriched"]):::uptodate --> x87ba475ce69b80a8(["gpkg_output"]):::uptodate
     x721addc77afbcf42(["input_file"]):::uptodate --> x87ba475ce69b80a8(["gpkg_output"]):::uptodate
+    x31d8d3daa8f8e034(["activites_enriched"]):::uptodate --> x348ebc99af6804b7(["pa_table"]):::uptodate
     x721addc77afbcf42(["input_file"]):::uptodate --> x9be9fe4c25e464e0(["activity_data"]):::uptodate
     xd80c6efdd95a74a4(["indicators_locations"]):::uptodate --> x1ba9c4ef45365262(["summarised_indicators"]):::uptodate
     x9be9fe4c25e464e0(["activity_data"]):::uptodate --> x901ac07110e697ee(["unique_locations"]):::uptodate
