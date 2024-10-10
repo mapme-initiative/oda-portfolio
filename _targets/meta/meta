@@ -1,29 +1,29 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-activites_enriched|stem|9b15f31d40a60060|4d303e3958572618|89eb003f04e72eb1|399537530||t20000.6238679656s|e695d1e42389e75d|75282316|rds|local|vector|||1.289||
+activites_enriched|stem|40dc382b71265380|4d303e3958572618|404fc8a9bc31bda1|399537530||t20006.3799632008s|26b2670649a454b4|75282307|rds|local|vector|||1.489||
 activity_data|stem|3ea4d13a8ebd315f|31a9712457a4feb3|b17ade78b5ad593c|1576329300||t20000.6117631209s|65417731df935a25|75209751|rds|local|vector|||23.814||
-analyse_pas|function|7a38a07a19a2e95b|||||||||||||||
+analyse_pas|function|bac8c2d316ccb0ef|||||||||||||||
 config_file|stem|b1e44cb909a3ff6b|29950cbe68ebe964|2c530c1562a7fbd1|-615108176|config.yaml|t19997.5130150181s|aa7c037db756f5f2|1462|file|local|vector|||2.801||
 data_enriched|stem|6026f59e5b2b750b|ae780239aef19a7a|797e6d14e0d26d65|540244161||t19995.3772409573s|4b7172f6b9ad9753|73634037|rds|local|vector|||0.949||
 enrich_org_data|stem|4a2bb75d10f21c02|314078f91f94dd11|d2f690549dfd6e54|2044719217|./data/data_for_bmz_report_enriched.xlsx|t19994.3734177507s|0f8e1b7bd33fc165|499027|file|local|vector|||2.937||
 enrich_wpdas|function|5827ecf9a4f2d557|||||||||||||||
-excel_output|stem|2a11ddbc28804262|5486db44183e1cf2|6836d3aeda7e201c|1362697213|data/bmz_pa_portfolio_2023_enriched.xlsx|t20000.6239013443s|ac275dd80ad15cf6|587667|file|local|vector|||0.534||
+excel_output|stem|3cf2ed6874a0c715|5486db44183e1cf2|53ea4c35d923f597|1362697213|data/bmz_pa_portfolio_2023_enriched.xlsx|t20006.3800377357s|dd0b8f5d43f7e029|587663|file|local|vector|||0.529||
 extend_xlsx|function|41e0133f60a448ef|||||||||||||||
 fz_portfolio|stem|2596353713cbe6d4|3a40775cf5f8ffb3|f304851521c474de|-1717815435||t19995.3821206807s|df791f8b247d2082|48970835|rds|local|vector|||32.502|st_centroid assumes attributes are constant over geometries|
-gpkg_output|stem|63ac50a7fc215612|ac9c283b857c54e5|c4a438bd020a37ea|-760544315|data/bmz_pa_portfolio_2023_enriched.gpkg|t20000.6238778727s|66be52f2e9bc3d42|101212160|file|local|vector|||0.687||
+gpkg_output|stem|164a3a43944de57a|ac9c283b857c54e5|6e7583ca23abd18c|-760544315|data/bmz_pa_portfolio_2023_enriched.gpkg|t20006.3799901445s|66be52f2e9bc3d42|101212160|file|local|vector|||0.733||
 indicator_config|stem|c386c4f9d623d0c3|29950cbe68ebe964|2c530c1562a7fbd1|-1371212395|config.yaml|t19995.397980789s|44fefbc87cc9215c|2129|file|local|vector|||2.78||
-indicators_locations|stem|ced9054c741c3870|f123a74d87225ffc|7317ef254fb12b3e|2112190946|data/bmz_pa_portfolio_2023_unique_locations_indicators.gpkg|t20000.6234083952s|ba17d65fdb617927|66486272|file|local|vector|||1005.319|incomplete final line found on config.yaml. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .|
+indicators_locations|stem|d1b5549737217c94|f123a74d87225ffc|7317ef254fb12b3e|2112190946|data/bmz_pa_portfolio_2023_unique_locations_indicators.gpkg|t20006.3794951583s|ba17d65fdb617927|66486272|file|local|vector|||1012.709|incomplete final line found on config.yaml. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .|
 indicators_wdpa|stem|cb8bed0167807c21|5758ede07fc62be3|d38731011b9f1e18|544118983|./data/data_for_bmz_report_input_indicators.gpkg|t19995.3758527558s|d5c8dedab2c214ff|67792896|file|local|vector|||528.041|incomplete final line found on .config.yaml. .. .. .. Error in purrrmap1lengthgmw, functionj   ℹ In index 4.Caused by error in wk_handle.wk_wkb Loop 0 is not valid Edge 523 has duplicate vertex with edge 527. .. Error in purrrmap1lengthgmw, functionj   ℹ In index 4.Caused by error in wk_handle.wk_wkb Loop 0 is not valid Edge 11 has duplicate vertex with edge 15. .. .. .. .. Error in purrrmap1lengthgmw, functionj   ℹ In index 4.Caused by error in wk_handle.wk_wkb Loop 0 is not valid Edge 148 has duplicate vertex with edge 152. Error in purrrmap1lengthgmw, functionj   ℹ In index 4.Caused by error in wk_handle.wk_wkb Loop 0 is not valid Edge 131 has duplicate vertex with edge 135. Error in purrrmap1lengthgmw, functionj   ℹ In index 4.Caused by error in wk_handle.wk_wkb Loop 0 is not valid Edge 105 has duplicate vertex with edge 109. Error in purrrmap1lengthgmw, functionj   ℹ In index 4.Caused by error in wk_handle.wk_wkb Loop 0 is not valid Edge 960 has duplicate vertex with edge 964. .. .. Error in purrrmap1lengthgmw, functionj   ℹ In index 4.Caused by error in wk_handle.wk_wkb Loop 0 is not valid Edge 0 has duplicate vertex with edge 632. .. Error in purrrmap1lengthgmw, functionj   ℹ In index 4.Caused by error in wk_handle.wk_wkb Loop 0 is not valid Edge 25 has duplicate vertex with edge 29. Error in purrrmap1lengthgmw, functionj   ℹ In index 4.Caused by error in wk_handle.wk_wkb Loop 0 is not valid Edge 2 has duplicate vertex with edge 28. .. .. .. .. .. .. .. .. .. .. .. Error in purrrmap1lengthgmw, functionj   ℹ In index 4.Caused by error in wk_handle.wk_wkb Loop 0 is not valid Edge 6 has duplicate vertex with edge 78. Error in purrrmap1lengthgmw, functionj   ℹ In index 4.Caused by error in wk_handle.wk_wkb Loop 0 is not valid Edge 91 has duplicate vertex with edge 95. Error in pur|
-input_file|stem|617d645354c2361c|9f7813f82cdba0bd|2c530c1562a7fbd1|1993266094|data/bmz_pa_portfolio_2023.gpkg|t20000.6111481846s|f756211dc560e618|101052416|file|local|vector|||2.829||
+input_file|stem|617d645354c2361c|9f7813f82cdba0bd|2c530c1562a7fbd1|1993266094|data/bmz_pa_portfolio_2023.gpkg|t20006.366078311s|f756211dc560e618|101052416|file|local|vector|||2.829||
 locations|stem|08af281b7f8b1340|3a40775cf5f8ffb3|3d589fd86d6c9bbd|-1299370672|./data/data_for_bmz_report_locations.gpkg|t19995.4289577054s|cf08c8248e024f85|64618496|file|local|vector|||35.102|st_centroid assumes attributes are constant over geometries|
 locations_indicators|stem|b5786d368f7f823f|e5c2306d9fe56557|852d32e033c058bd|1105248099|./data/data_for_bmz_report_locations_indicators.gpkg|t19995.4171375175s||69414912|file|local|vector|||0.272|incomplete final line found on config.yaml|spds_existsoutput  optionsoverwrite  TRUE is not TRUE
 mapme_opts|object|4b624425d3053d72|||||||||||||||
 output_gpkg|function|a75a26aaf5a05759|||||||||||||||
 output_xlsx|function|1b3904ec74bb6b18|||||||||||||||
 pa_analysis|stem|56f75718ded5164e|e78371c1353ad1ea|e4d80184bc4fcdad|33556947|data/bmz_pa_portfolio_2023_pa_analysis.xlsx|t20000.6238951408s|c552a3dec3e9c0c2|6199|file|local|vector|||1.455||
-pa_data|stem|6abb416f48670af8|eb423bb4cf00bc8b|66e71be0568219f9|-1817921912||t20005.6043213348s|b0eab8b0dae8ef5e|572|rds|local|vector|||1.604||
-pa_output_excel|stem|5b50f4b36d1d1426|6410997afae7310b|fb82f237694018de|-831140797||t20005.60655405s|e441caf5cebd5545|94|rds|local|vector|||0.138||
-pa_output_word|stem|a4dccf9d5cfe8ec9|9fa089a578d248e3|098f539e227cad4b|-108668965||t20005.6065524297s|6152842ab8c772f1|119|rds|local|vector|||0.435||
-pa_table|stem|acdcbb8c209628ba|3725d8057455d31f|bf91ced3b22cf02a|-423880550||t20005.6070360272s|a057b906461a46f0|75|rds|local|vector|||3.917|13 failed to parse.|
+pa_data|stem|d9982723c7bb34ba|eb423bb4cf00bc8b|23264b58fab6609e|-1817921912||t20006.3814116325s|6c82fc2ba8d62050|577|rds|local|vector|||1.612||
+pa_output_excel|stem|779b1f2c173f12f2|6410997afae7310b|59f45fe68003e9da|-831140797|data/bmz_pa_portfolio_2023_pa_analysis.xlsx|t20006.3814195952s|8c39d4d61cd86b66|6198|file|local|vector|||0.103||
+pa_output_word|stem|80ead23a09b3b2ef|9fa089a578d248e3|c0e6180b8a0782e7|-108668965|/home/rstudio/mapme/oda-portfolio/data/bmz_pa_portfolio_2023_pa_analysis.docx|t20006.3814180212s|28f2f03459116b60|28076|file|local|vector|||0.517||
+pa_table|stem|acdcbb8c209628ba|3725d8057455d31f|bbcadfce24d8b66f|-423880550||t20006.3800313007s|a057b906461a46f0|75|rds|local|vector|||3.517|13 failed to parse.|
 pa_word|function|abc63474adc2eb56|||||||||||||||
 pa_xlsx|function|d4d2d6e5e7862942|||||||||||||||
 read_activity_data|function|4570acf6612db037|||||||||||||||
@@ -42,5 +42,5 @@ summarise_mangroves|function|c3f2e374f442fa8f|||||||||||||||
 summarise_portfolio|function|c258f4a6b09bac49|||||||||||||||
 summarise_sr|function|11cb397e875124ae|||||||||||||||
 summarise_treeccover|function|5872ba737c3b01ce|||||||||||||||
-summarised_indicators|stem|deaf3a92a4c707e2|34b212b8fdb61b3a|8be2d2cd67cd3fb7|1491835701||t20000.6237663944s|e16cb4ac846aef55|49136980|rds|local|vector|||25.916||
+summarised_indicators|stem|4e774f99cb0b1272|34b212b8fdb61b3a|2ba4a3be8a373e40|1491835701||t20006.3798531576s|3918d2e44c9a98ec|49136988|rds|local|vector|||25.966||
 unique_locations|stem|66a9767610930165|0bea0aa752e9980c|3850ff0d19f8a50b|-1093428645|data/bmz_pa_portfolio_2023_unique_locations.gpkg|t20000.6117699726s|1de859a5eb5e6b6e|64815104|file|local|vector|||0.487||
