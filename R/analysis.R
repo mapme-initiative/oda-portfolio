@@ -5,13 +5,8 @@ analyse_pas <- function(data) {
   
   pa_data <- data |>
     st_drop_geometry() |>
-    select(location_id, activity_end_date, donor, area_ha, designation, iplc_status, country, treecover_ha_2023, extended_iplc_definition) |>
+    select(location_id, activity_end_date, donor, area_ha, designation, country, treecover_ha_2023, extended_iplc_definition) |>
     mutate(
-      iplc = case_when(
-        grepl("Yes, area is formally recognized or self-proclaimed by IPLCs", iplc_status) ~ 1,
-        grepl("^No", iplc_status) ~ 0,
-        .default = 0
-      ),
       ramsar = case_when(
         grepl("ramsar", tolower(designation)) ~1,
         .default = 0
@@ -25,13 +20,12 @@ analyse_pas <- function(data) {
         .default = 0
       )
     ) |>
-    select(-c(designation, iplc_status)) |>
+    select(-designation) |>
     distinct() |>
     group_by(location_id) |>
     summarise(
       donor = ifelse(length(unique(donor)) > 1, "both", donor),
       area_ha = ifelse(n()>1, area_ha[1], area_ha),
-      iplc = max(iplc),
       ramsar = max(ramsar),
       mab = max(mab),
       wh = max(wh),
