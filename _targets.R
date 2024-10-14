@@ -42,8 +42,17 @@ list(
     format = "file"
   ),
   tar_target(
+    name = foundation_xlsx,
+    command = "data/stiftungsstruktur_kfw_131024.xlsx",
+    format = "file"
+  ),
+  tar_target(
     name = activity_data,
     command = read_activity_data(input_file)
+  ),
+  tar_target(
+    name = foundation_data,
+    command = read_foundation_data(foundation_xlsx)
   ),
   tar_target(
     name = unique_locations,
@@ -90,5 +99,9 @@ list(
     name = pa_output_word,
     command = pa_word(pa_data, input_file),
     format = "file"
+  ),
+  tar_target(
+    name = foundation_analysis,
+    command = analyse_foundations(activites_enriched, foundation_data, donor = "KFW")
   )
 )
