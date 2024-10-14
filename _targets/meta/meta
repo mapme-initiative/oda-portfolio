@@ -2,7 +2,7 @@ name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iterat
 activites_enriched|stem|787e88a42da8dc34|102873a487f7f682|eb31e3a0fcb48031|399537530||t20010.6671182555s|978b9389bee2a8f8|75279560|rds|local|vector|||0.789||
 activity_data|stem|3ea4d13a8ebd315f|31a9712457a4feb3|b17ade78b5ad593c|1576329300||t20000.6117592593s|65417731df935a25|75209751|rds|local|vector|||23.814||
 analyse_foundations|function|0b50872ce7ad2cc6|||||||||||||||
-analyse_pas|function|042a1006fe1f7a1a|||||||||||||||
+analyse_pas|function|19664774dc193ec1|||||||||||||||
 coalesce_with_wdpa|function|7f4bd0a3254c8fc3|||||||||||||||
 config_file|stem|b1e44cb909a3ff6b|29950cbe68ebe964|2c530c1562a7fbd1|-615108176|config.yaml|t20010.3691620734s|aa7c037db756f5f2|1462|file|local|vector|||2.801||
 data_enriched|stem|6026f59e5b2b750b|ae780239aef19a7a|797e6d14e0d26d65|540244161||t19995.3772409573s|4b7172f6b9ad9753|73634037|rds|local|vector|||0.949||
@@ -28,9 +28,9 @@ mapme_opts|object|4b624425d3053d72|||||||||||||||
 output_gpkg|function|a75a26aaf5a05759|||||||||||||||
 output_xlsx|function|d8ecdc8848238b14|||||||||||||||
 pa_analysis|stem|56f75718ded5164e|e78371c1353ad1ea|e4d80184bc4fcdad|33556947|data/bmz_pa_portfolio_2023_pa_analysis.xlsx|t20000.6238951408s|c552a3dec3e9c0c2|6199|file|local|vector|||1.455||
-pa_data|stem|50c6be0228450b14|eb423bb4cf00bc8b|e9f1fd30308323e8|-1817921912||t20010.6671358939s|6c82fc2ba8d62050|577|rds|local|vector|||1.436||
-pa_output_excel|stem|b69711329f4a3f51|6410997afae7310b|9ce7dd561da448f3|-831140797|data/bmz_pa_portfolio_2023_enriched_pa_analysis.xlsx|t20010.6671839018s|5435d7c91b4c111f|6192|file|local|vector|||0.015||
-pa_output_word|stem|eb362a3c0cd34324|9fa089a578d248e3|a9ff60873ca21f8c|-108668965|/home/rstudio/mapme/oda-portfolio/data/bmz_pa_portfolio_2023_enriched_pa_analysis.docx|t20010.6671834389s|aa7d665eb48f08d1|28077|file|local|vector|||0.385||
+pa_data|stem|a26b2df3b3442565|eb423bb4cf00bc8b|88f3e47a7df494d6|-1817921912||t20010.6908599482s|6c82fc2ba8d62050|577|rds|local|vector|||1.605||
+pa_output_excel|stem|e23b27a208b1fa83|6410997afae7310b|c118378e429dad0a|-831140797|data/bmz_pa_portfolio_2023_enriched_pa_analysis.xlsx|t20010.6908675868s|5435d7c91b4c111f|6192|file|local|vector|||0.103||
+pa_output_word|stem|2d0644d273ac9a7c|9fa089a578d248e3|7657329f96f623fe|-108668965|/home/rstudio/mapme/oda-portfolio/data/bmz_pa_portfolio_2023_enriched_pa_analysis.docx|t20010.6908660128s|18e5c87ce6504906|28073|file|local|vector|||0.525||
 pa_table|stem|acdcbb8c209628ba|3725d8057455d31f|19907240791a5056|-423880550||t20010.6671787168s|a057b906461a46f0|75|rds|local|vector|||3.68|13 failed to parse.|
 pa_word|function|abc63474adc2eb56|||||||||||||||
 pa_xlsx|function|e6fbccc660f26b7d|||||||||||||||
