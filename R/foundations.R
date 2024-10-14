@@ -21,9 +21,8 @@ analyse_foundations <- function(activites_enriched, foundation_data, donor = "KF
     st_drop_geometry() |>
     filter(!is.na(location_id) & donor == {{donor}} & bmz_nr %in% target_bmz_nums)
   
-  
   locs_count <- length(unique(activites$location_id))
-  bmznr_count <- length(unique(activites$bmz_nr))
+  bmznr_count <- length(unique(target_bmz_nums))
   area_ha <- select(activites, location_id, area_ha) |>
     distinct() |>
     pull(area_ha) |>
