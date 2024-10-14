@@ -26,25 +26,16 @@ graph LR
   end
   subgraph Graph
     direction LR
+    x31d8d3daa8f8e034(["activites_enriched"]):::uptodate --> x602dd3e6128ae7dc(["foundation_analysis"]):::uptodate
+    xe727961fb6912752(["foundation_data"]):::uptodate --> x602dd3e6128ae7dc(["foundation_analysis"]):::uptodate
     x721addc77afbcf42(["input_file"]):::uptodate --> x16b7b3078fdccc78(["pa_output_word"]):::uptodate
     xa355481dcc1a3b39(["pa_data"]):::uptodate --> x16b7b3078fdccc78(["pa_output_word"]):::uptodate
     x31d8d3daa8f8e034(["activites_enriched"]):::uptodate --> xa355481dcc1a3b39(["pa_data"]):::uptodate
-    x31d8d3daa8f8e034(["activites_enriched"]):::uptodate --> x87ba475ce69b80a8(["gpkg_output"]):::uptodate
-    x721addc77afbcf42(["input_file"]):::uptodate --> x87ba475ce69b80a8(["gpkg_output"]):::uptodate
     x31d8d3daa8f8e034(["activites_enriched"]):::uptodate --> x348ebc99af6804b7(["pa_table"]):::uptodate
-    x721addc77afbcf42(["input_file"]):::uptodate --> x9be9fe4c25e464e0(["activity_data"]):::uptodate
-    xd80c6efdd95a74a4(["indicators_locations"]):::uptodate --> x1ba9c4ef45365262(["summarised_indicators"]):::uptodate
-    x9be9fe4c25e464e0(["activity_data"]):::uptodate --> x901ac07110e697ee(["unique_locations"]):::uptodate
-    x721addc77afbcf42(["input_file"]):::uptodate --> x901ac07110e697ee(["unique_locations"]):::uptodate
+    x3d8799c25d1129a4(["foundation_xlsx"]):::uptodate --> xe727961fb6912752(["foundation_data"]):::uptodate
     x721addc77afbcf42(["input_file"]):::uptodate --> xf39fc5dec6b9a973(["pa_output_excel"]):::uptodate
     xa355481dcc1a3b39(["pa_data"]):::uptodate --> xf39fc5dec6b9a973(["pa_output_excel"]):::uptodate
-    x9be9fe4c25e464e0(["activity_data"]):::uptodate --> x31d8d3daa8f8e034(["activites_enriched"]):::uptodate
     x721addc77afbcf42(["input_file"]):::uptodate --> x31d8d3daa8f8e034(["activites_enriched"]):::uptodate
-    x1ba9c4ef45365262(["summarised_indicators"]):::uptodate --> x31d8d3daa8f8e034(["activites_enriched"]):::uptodate
-    x31d8d3daa8f8e034(["activites_enriched"]):::uptodate --> x79629de1855e879d(["excel_output"]):::uptodate
-    x721addc77afbcf42(["input_file"]):::uptodate --> x79629de1855e879d(["excel_output"]):::uptodate
-    x9909b451a6a56060(["config_file"]):::uptodate --> xd80c6efdd95a74a4(["indicators_locations"]):::uptodate
-    x901ac07110e697ee(["unique_locations"]):::uptodate --> xd80c6efdd95a74a4(["indicators_locations"]):::uptodate
   end
   classDef uptodate stroke:#000000,color:#ffffff,fill:#354823;
   classDef none stroke:#000000,color:#000000,fill:#94a4ac;
