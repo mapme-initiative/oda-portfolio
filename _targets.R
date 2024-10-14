@@ -12,6 +12,8 @@ mapme_opts <- list(
   max_cores = 10
 )
 
+wdpa_version <- "Sep2024"
+
 #----------- do not change below this line -------------#
 
 # Set target options:
@@ -47,6 +49,11 @@ list(
     format = "file"
   ),
   tar_target(
+    name = "wdpa_database",
+    command = make_valid(fetch_wdpa(path = "data", version = wdpa_version)),
+    format = "file"
+  ),
+  tar_target(
     name = activity_data,
     command = read_activity_data(input_file)
   ),
@@ -70,7 +77,7 @@ list(
   ),
   tar_target(
     name = activites_enriched,
-    command = enrich_wpdas(activity_data, summarised_indicators, input_file)
+    command = enrich_wpdas(activity_data, summarised_indicators, input_file, wdpa_database)
   ),
   tar_target(
     name = excel_output, 

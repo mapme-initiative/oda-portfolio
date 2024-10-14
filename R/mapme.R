@@ -52,7 +52,7 @@ summarise_indicators <- function(filename) {
   data
 }
 
-enrich_wpdas <- function(activites, sum_data, org_gpkg) {
+enrich_wpdas <- function(activites, sum_data, org_gpkg, wdpa_database) {
   
   data <- dplyr::left_join(
     activites,
@@ -68,8 +68,29 @@ enrich_wpdas <- function(activites, sum_data, org_gpkg) {
   org_empty <- org_data[st_is_empty(org_data), ]
   data <- st_as_sf(bind_rows(data, org_empty))
   
-  data
+  iplc_criterion_1 <- sapply(data$iplc_status == "Yes, area is formally recognized or self-proclaimed by IPLCs", isTRUE)
+  iplc_criterion_2 <- data$location_type %in% c("indigenous and traditional territories (ITT)", "indigenous & community conservation area (ICCA)")
+  iplc_criterion_3 <- gsub("\n", "", data$governance_status) %in% c("Local communities", "Indigenous peoples")
+
+  wdpa_ids <- as.numeric(unique(data$wdpa_id))
+  wdpa_ids <- wdpa_ids [!is.na(wdpa_ids)]
+  lyrs <- sf::st_layers(wdpa_database)
+  sql <- sprintf("SELECT WDPAID, GOV_TYPE FROM %s WHERE WDPAID IN ('%s')",
+                 lyrs$name,
+                 paste0(wdpa_ids, collapse = "', '")
+                 )
+  wdpa_govtype <- read_sf(wdpa_database, query = sql) |>
+    st_drop_geometry() |>
+    unique()
+  wdpa_govtype <- data |>
+    st_drop_geometry() |>
+    select(wdpa_id) |>
+    rename(WDPAID = wdpa_id) |>
+    merge(y = wdpa_govtype, by = "WDPAID", all.x = TRUE, all.y = FALSE)
+  iplc_criterion_4 <- wdpa_govtype$GOV_TYPE %in% c("Local communities", "Indigenous peoples")
+  data$extended_iplc_definition <- iplc_criterion_1 | iplc_criterion_2 | iplc_criterion_3 | iplc_criterion_4
   
+  data
 }
 
 output_gpkg <- function(data, org_gpkg) {
