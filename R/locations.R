@@ -30,6 +30,6 @@ subset_locs <- function(data) {
   
   data2 <- st_as_sf(left_join(data2, locs, by = "location_id"))
   st_write(data2, dsn = "data/bmz_pas_2023.gpkg", delete_dsn = TRUE)
-  openxlsx2::write_xlsx(st_drop_geometry(data2), file = "data/bmz_pas_2023.xlsx")
+  openxlsx2::write_xlsx(st_drop_geometry(data2), file = "data/bmz_pas_2023.xlsx", na.strings = NULL)
   "data/bmz_pas_2023.xlsx"
 }

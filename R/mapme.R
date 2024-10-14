@@ -102,6 +102,6 @@ output_gpkg <- function(data, org_gpkg) {
 output_xlsx <- function(data, org_gpkg) {
   dsn <- gsub(".gpkg$", "_enriched.xlsx", org_gpkg)
   data <- st_drop_geometry(data)
-  openxlsx2::write_xlsx(data, dsn, overwrite = TRUE)
+  openxlsx2::write_xlsx(data, dsn, overwrite = TRUE, na.strings = NULL)
   dsn
 }

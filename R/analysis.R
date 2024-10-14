@@ -181,7 +181,7 @@ analyse_pas <- function(data) {
 
 pa_xlsx <- function(data, input_file) {
   dsn <- gsub(".gpkg", "_pa_analysis.xlsx", input_file)
-  openxlsx2::write_xlsx(data, dsn)
+  openxlsx2::write_xlsx(data, dsn, na.strings = NULL)
   dsn
 }
 

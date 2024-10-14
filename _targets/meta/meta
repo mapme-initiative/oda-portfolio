@@ -8,7 +8,7 @@ config_file|stem|b1e44cb909a3ff6b|29950cbe68ebe964|2c530c1562a7fbd1|-615108176|c
 data_enriched|stem|6026f59e5b2b750b|ae780239aef19a7a|797e6d14e0d26d65|540244161||t19995.3772409573s|4b7172f6b9ad9753|73634037|rds|local|vector|||0.949||
 enrich_org_data|stem|4a2bb75d10f21c02|314078f91f94dd11|d2f690549dfd6e54|2044719217|./data/data_for_bmz_report_enriched.xlsx|t19994.3734177507s|0f8e1b7bd33fc165|499027|file|local|vector|||2.937||
 enrich_wpdas|function|3c1ba1ff85bda294|||||||||||||||
-excel_output|stem|a5299962dbd786a7|5486db44183e1cf2|b65fe0666b7857ce|1362697213|data/bmz_pa_portfolio_2023_enriched.xlsx|t20010.5642672464s|f1c98e35f67f523f|595619|file|local|vector|||1.065||
+excel_output|stem|1ae924b51ff4cd08|5486db44183e1cf2|278e3c8341095bb0|1362697213|data/bmz_pa_portfolio_2023_enriched.xlsx|t20010.6158823463s|3d72740ff2cf36ad|594335|file|local|vector|||1.038||
 extend_xlsx|function|41e0133f60a448ef|||||||||||||||
 fetch_wdpa|function|38a28f2dc4d7d7f6|||||||||||||||
 foundation_analysis|stem|24b4f6fd06e25618|6fc6aaed09cf2631|9b165f4e8347d95f|-593920484||t20010.5641446084s|8d348a957fc393b0|181|rds|local|vector|||0.042||
@@ -26,14 +26,14 @@ locations_indicators|stem|b5786d368f7f823f|e5c2306d9fe56557|852d32e033c058bd|110
 make_valid|function|bcf30c19adca0d25|||||||||||||||
 mapme_opts|object|4b624425d3053d72|||||||||||||||
 output_gpkg|function|a75a26aaf5a05759|||||||||||||||
-output_xlsx|function|1b3904ec74bb6b18|||||||||||||||
+output_xlsx|function|d8ecdc8848238b14|||||||||||||||
 pa_analysis|stem|56f75718ded5164e|e78371c1353ad1ea|e4d80184bc4fcdad|33556947|data/bmz_pa_portfolio_2023_pa_analysis.xlsx|t20000.6238951408s|c552a3dec3e9c0c2|6199|file|local|vector|||1.455||
 pa_data|stem|2c77e727f178aed9|eb423bb4cf00bc8b|14d4571dd424f2a9|-1817921912||t20010.5879627489s|3015a9807eb002f7|578|rds|local|vector|||2.61||
-pa_output_excel|stem|f0a6fcba9310b6e1|6410997afae7310b|b51f79f3b538c051|-831140797|data/bmz_pa_portfolio_2023_pa_analysis.xlsx|t20010.5887163088s|84144fc90de532dc|6200|file|local|vector|||0.299||
-pa_output_word|stem|80ead23a09b3b2ef|9fa089a578d248e3|e0f1baec072ad58a|-108668965|/home/rstudio/mapme/oda-portfolio/data/bmz_pa_portfolio_2023_pa_analysis.docx|t20006.3814180212s||28076|file|local|vector|||0.269||there is no package called flextable
-pa_table|stem|acdcbb8c209628ba|3725d8057455d31f|549bcaa1e7999ba3|-423880550||t20010.5642548391s|a057b906461a46f0|75|rds|local|vector|||6.653|13 failed to parse.|
+pa_output_excel|stem|c340b10d032c2533|6410997afae7310b|1d2e84832743bf34|-831140797|data/bmz_pa_portfolio_2023_pa_analysis.xlsx|t20010.6146025851s|475bef04b98f4ff9|6194|file|local|vector|||0.241||
+pa_output_word|stem|80ead23a09b3b2ef|9fa089a578d248e3|e0f1baec072ad58a|-108668965|/home/rstudio/mapme/oda-portfolio/data/bmz_pa_portfolio_2023_pa_analysis.docx|t20006.3814180212s||28076|file|local|vector|||0.297||there is no package called flextable
+pa_table|stem|acdcbb8c209628ba|3725d8057455d31f|71e64d406dbb1d53|-423880550||t20010.6158702631s|a057b906461a46f0|75|rds|local|vector|||7.198|13 failed to parse.|
 pa_word|function|abc63474adc2eb56|||||||||||||||
-pa_xlsx|function|d4d2d6e5e7862942|||||||||||||||
+pa_xlsx|function|e6fbccc660f26b7d|||||||||||||||
 read_activity_data|function|4570acf6612db037|||||||||||||||
 read_foundation_data|function|d825899e7658da7d|||||||||||||||
 read_portfolio_data|function|21e2b31d91656768|||||||||||||||
@@ -41,7 +41,7 @@ run_mapme_indicators|function|4c6c87eee51579e0|||||||||||||||
 select_years|function|af043624a8e10401|||||||||||||||
 simplify_names|function|b33539ed9812fec4|||||||||||||||
 split_location_data|function|5f30c0c4d80d8fc1|||||||||||||||
-subset_locs|function|1a16ffe4c3a55069|||||||||||||||
+subset_locs|function|69d330aa158279ae|||||||||||||||
 summarise_acled|function|7e58941f55501c89|||||||||||||||
 summarise_biomes|function|15b78b5f20a01ba3|||||||||||||||
 summarise_carbon|function|7fbd9242cca7361a|||||||||||||||
