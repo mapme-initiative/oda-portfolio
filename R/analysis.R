@@ -5,8 +5,14 @@ analyse_pas <- function(data) {
   
   pa_data <- data |>
     st_drop_geometry() |>
-    select(location_id, activity_end_date, donor, area_ha, designation, country, treecover_ha_2023, extended_iplc_definition) |>
+    select(location_id, activity_end_date, donor, country, area_ha, designation, iplc_status, location_type, governance_status, treecover_ha_2023) |>
     mutate(
+      iplc = case_when(
+        iplc_status == "Yes, area is formally recognized or self-proclaimed by IPLCs" ~ 1,
+        location_type %in% c("indigenous and traditional territories (ITT)", "indigenous & community conservation area (ICCA)") ~ 1,
+        gsub("\n", "", governance_status) %in% c("Local communities", "Indigenous peoples") ~ 1,
+        .default = 0
+      ),
       ramsar = case_when(
         grepl("ramsar", tolower(designation)) ~1,
         .default = 0
@@ -20,18 +26,18 @@ analyse_pas <- function(data) {
         .default = 0
       )
     ) |>
-    select(-designation) |>
+    select(-c(designation, iplc_status, location_type, governance_status)) |>
     distinct() |>
     group_by(location_id) |>
     summarise(
       donor = ifelse(length(unique(donor)) > 1, "both", donor),
       area_ha = ifelse(n()>1, area_ha[1], area_ha),
+      iplc = max(iplc),
       ramsar = max(ramsar),
       mab = max(mab),
       wh = max(wh),
       treecover_area_2023 = ifelse(n()>1, treecover_ha_2023[1], treecover_ha_2023),
-      country = lapply(country, function(y) strsplit(y, ";")[[1]]) |> unlist() |> unique() |> paste0(collapse = ";"),
-      extended_iplc_definition = any(extended_iplc_definition)
+      country = lapply(country, function(y) strsplit(y, ";")[[1]]) |> unlist() |> unique() |> paste0(collapse = ";")
     ) |>
     ungroup()
 
@@ -127,20 +133,20 @@ analyse_pas <- function(data) {
   ########################## count IPLC
   iplc_count <- tibble(
     var = "iplc_count",
-    kfw = sum(pa_data$extended_iplc_definition[is_kfw]),
-    giz = sum(pa_data$extended_iplc_definition[is_giz]),
-    both = sum(pa_data$extended_iplc_definition[is_both]),
-    total = sum(pa_data$extended_iplc_definition)
+    kfw = sum(pa_data$iplc[is_kfw]),
+    giz = sum(pa_data$iplc[is_giz]),
+    both = sum(pa_data$iplc[is_both]),
+    total = sum(pa_data$iplc)
   )
   
   
   ########################## area IPLC
   iplc_area <- tibble(
     var = "iplc_area",
-    kfw = sum(pa_data$area_ha[pa_data$extended_iplc_definition & is_kfw]),
-    giz = sum(pa_data$area_ha[pa_data$extended_iplc_definition & is_giz]),
-    both = sum(pa_data$area_ha[pa_data$extended_iplc_definition & is_both]),
-    total =sum(pa_data$area_ha[pa_data$extended_iplc_definition])
+    kfw = sum(pa_data$area_ha[pa_data$iplc & is_kfw]),
+    giz = sum(pa_data$area_ha[pa_data$iplc & is_giz]),
+    both = sum(pa_data$area_ha[pa_data$iplc & is_both]),
+    total =sum(pa_data$area_ha[pa_data$iplc])
   )
   
   ###################### emtpy counts
