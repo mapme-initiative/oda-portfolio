@@ -2,7 +2,7 @@ name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iterat
 activites_enriched|stem|1283c8a2134678c7|11cedb02b17b658b|1ff72303cafdb151|399537530||t20010.5641385436s|93f2ccda953e2845|75282646|rds|local|vector|||50.092||
 activity_data|stem|3ea4d13a8ebd315f|31a9712457a4feb3|b17ade78b5ad593c|1576329300||t20000.6117592593s|65417731df935a25|75209751|rds|local|vector|||23.814||
 analyse_foundations|function|0b50872ce7ad2cc6|||||||||||||||
-analyse_pas|function|bac8c2d316ccb0ef|||||||||||||||
+analyse_pas|function|67cf2c1efb598673|||||||||||||||
 coalesce_with_wdpa|function|7f4bd0a3254c8fc3|||||||||||||||
 config_file|stem|b1e44cb909a3ff6b|29950cbe68ebe964|2c530c1562a7fbd1|-615108176|config.yaml|t20010.3691620734s|aa7c037db756f5f2|1462|file|local|vector|||2.801||
 data_enriched|stem|6026f59e5b2b750b|ae780239aef19a7a|797e6d14e0d26d65|540244161||t19995.3772409573s|4b7172f6b9ad9753|73634037|rds|local|vector|||0.949||
@@ -28,9 +28,9 @@ mapme_opts|object|4b624425d3053d72|||||||||||||||
 output_gpkg|function|a75a26aaf5a05759|||||||||||||||
 output_xlsx|function|1b3904ec74bb6b18|||||||||||||||
 pa_analysis|stem|56f75718ded5164e|e78371c1353ad1ea|e4d80184bc4fcdad|33556947|data/bmz_pa_portfolio_2023_pa_analysis.xlsx|t20000.6238951408s|c552a3dec3e9c0c2|6199|file|local|vector|||1.455||
-pa_data|stem|d9982723c7bb34ba|eb423bb4cf00bc8b|f7cfb77daf34e63b|-1817921912||t20010.5641653027s|6c82fc2ba8d62050|577|rds|local|vector|||1.78||
-pa_output_excel|stem|779b1f2c173f12f2|6410997afae7310b|59f45fe68003e9da|-831140797|data/bmz_pa_portfolio_2023_pa_analysis.xlsx|t20006.3814195952s|8c39d4d61cd86b66|6198|file|local|vector|||0.103||
-pa_output_word|stem|80ead23a09b3b2ef|9fa089a578d248e3|c0e6180b8a0782e7|-108668965|/home/rstudio/mapme/oda-portfolio/data/bmz_pa_portfolio_2023_pa_analysis.docx|t20006.3814180212s||28076|file|local|vector|||0.479||there is no package called flextable
+pa_data|stem|2c77e727f178aed9|eb423bb4cf00bc8b|14d4571dd424f2a9|-1817921912||t20010.5879627489s|3015a9807eb002f7|578|rds|local|vector|||2.61||
+pa_output_excel|stem|f0a6fcba9310b6e1|6410997afae7310b|b51f79f3b538c051|-831140797|data/bmz_pa_portfolio_2023_pa_analysis.xlsx|t20010.5887163088s|84144fc90de532dc|6200|file|local|vector|||0.299||
+pa_output_word|stem|80ead23a09b3b2ef|9fa089a578d248e3|e0f1baec072ad58a|-108668965|/home/rstudio/mapme/oda-portfolio/data/bmz_pa_portfolio_2023_pa_analysis.docx|t20006.3814180212s||28076|file|local|vector|||0.269||there is no package called flextable
 pa_table|stem|acdcbb8c209628ba|3725d8057455d31f|549bcaa1e7999ba3|-423880550||t20010.5642548391s|a057b906461a46f0|75|rds|local|vector|||6.653|13 failed to parse.|
 pa_word|function|abc63474adc2eb56|||||||||||||||
 pa_xlsx|function|d4d2d6e5e7862942|||||||||||||||

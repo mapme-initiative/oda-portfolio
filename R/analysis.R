@@ -5,7 +5,7 @@ analyse_pas <- function(data) {
   
   pa_data <- data |>
     st_drop_geometry() |>
-    select(location_id, activity_end_date, donor, area_ha, designation, iplc_status, country, treecover_ha_2023) |>
+    select(location_id, activity_end_date, donor, area_ha, designation, iplc_status, country, treecover_ha_2023, extended_iplc_definition) |>
     mutate(
       iplc = case_when(
         grepl("Yes, area is formally recognized or self-proclaimed by IPLCs", iplc_status) ~ 1,
@@ -36,10 +36,11 @@ analyse_pas <- function(data) {
       mab = max(mab),
       wh = max(wh),
       treecover_area_2023 = ifelse(n()>1, treecover_ha_2023[1], treecover_ha_2023),
-      country = lapply(country, function(y) strsplit(y, ";")[[1]]) |> unlist() |> unique() |> paste0(collapse = ";")
+      country = lapply(country, function(y) strsplit(y, ";")[[1]]) |> unlist() |> unique() |> paste0(collapse = ";"),
+      extended_iplc_definition = any(extended_iplc_definition)
     ) |>
     ungroup()
-  
+
   is_kfw <- pa_data$donor %in% c("KFW", "both")
   is_giz <- pa_data$donor %in% c("GIZ", "both")
   is_both <- pa_data$donor == "both"
@@ -132,20 +133,20 @@ analyse_pas <- function(data) {
   ########################## count IPLC
   iplc_count <- tibble(
     var = "iplc_count",
-    kfw = sum(pa_data$iplc[is_kfw]),
-    giz = sum(pa_data$iplc[is_giz]),
-    both = sum(pa_data$iplc[is_both]),
-    total = sum(pa_data$iplc)
+    kfw = sum(pa_data$extended_iplc_definition[is_kfw]),
+    giz = sum(pa_data$extended_iplc_definition[is_giz]),
+    both = sum(pa_data$extended_iplc_definition[is_both]),
+    total = sum(pa_data$extended_iplc_definition)
   )
   
   
   ########################## area IPLC
   iplc_area <- tibble(
     var = "iplc_area",
-    kfw = sum(pa_data$area_ha[pa_data$iplc == 1 & is_kfw]),
-    giz = sum(pa_data$area_ha[pa_data$iplc == 1 & is_giz]),
-    both = sum(pa_data$area_ha[pa_data$iplc == 1 & is_both]),
-    total =sum(pa_data$area_ha[pa_data$iplc == 1])
+    kfw = sum(pa_data$area_ha[pa_data$extended_iplc_definition & is_kfw]),
+    giz = sum(pa_data$area_ha[pa_data$extended_iplc_definition & is_giz]),
+    both = sum(pa_data$area_ha[pa_data$extended_iplc_definition & is_both]),
+    total =sum(pa_data$area_ha[pa_data$extended_iplc_definition])
   )
   
   ###################### emtpy counts
