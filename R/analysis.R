@@ -9,8 +9,8 @@ analyse_pas <- function(data) {
     mutate(
       iplc = case_when(
         iplc_status == "Yes, area is formally recognized or self-proclaimed by IPLCs" ~ 1,
-        location_type %in% c("indigenous and traditional territories (ITT)", "indigenous & community conservation area (ICCA)") ~ 1,
-        gsub("\n", "", governance_status) %in% c("Local communities", "Indigenous peoples") ~ 1,
+        grepl("indigenous", tolower(location_type)) ~1,
+        grepl("local communities|indigenous peoples", tolower(gsub("\n", "", governance_status))) ~ 1,
         .default = 0
       ),
       ramsar = case_when(
