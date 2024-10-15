@@ -143,10 +143,10 @@ analyse_pas <- function(data) {
   ########################## area IPLC
   iplc_area <- tibble(
     var = "iplc_area",
-    kfw = sum(pa_data$area_ha[pa_data$iplc & is_kfw]),
-    giz = sum(pa_data$area_ha[pa_data$iplc & is_giz]),
-    both = sum(pa_data$area_ha[pa_data$iplc & is_both]),
-    total =sum(pa_data$area_ha[pa_data$iplc])
+    kfw = sum(pa_data$area_ha[pa_data$iplc == 1 & is_kfw]),
+    giz = sum(pa_data$area_ha[pa_data$iplc == 1 & is_giz]),
+    both = sum(pa_data$area_ha[pa_data$iplc == 1& is_both]),
+    total =sum(pa_data$area_ha[pa_data$iplc == 1])
   )
   
   ###################### emtpy counts
