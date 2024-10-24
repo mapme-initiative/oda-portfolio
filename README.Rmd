@@ -24,11 +24,14 @@ official development aid by OECD member countries.
 
 
 ```{r, results = "asis", echo = FALSE}
-cat(c("```mermaid", targets::tar_mermaid(), "```"), sep = "\n")
+cat(c("```mermaid", targets::tar_mermaid(targets_only = TRUE), "```"), sep = "\n")
 ```
 
+For this, ISO3 codes of ODA-receiving countries are retrieve from OECD 
+servers. Additional ISO3 codes that should be included anyways, should be manually
+added to `additional_isos`. 
 
-To run the pipeline adjust `_targets.R` and `config-oecd-countries.yaml` 
+To adjust the pipeline change the contents of `_targets.R` and `config.yaml` 
 to your local settings and then run the following from a shell:
 
 ```shell

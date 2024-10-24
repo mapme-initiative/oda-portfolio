@@ -20,44 +20,30 @@ graph LR
   style Graph fill:#FFFFFF00,stroke:#000000;
   subgraph Legend
     direction LR
-    x7420bd9270f8d27d([""Up to date""]):::uptodate --- x0a52b03877696646([""Outdated""]):::outdated
-    x0a52b03877696646([""Outdated""]):::outdated --- xbf4603d6c2c2ad6b([""Stem""]):::none
-    xbf4603d6c2c2ad6b([""Stem""]):::none --- xf0bce276fe2b9d3e>""Function""]:::none
-    xf0bce276fe2b9d3e>""Function""]:::none --- x5bffbffeae195fc9{{""Object""}}:::none
+    xf1522833a4d242c5([""Up to date""]):::uptodate --- xd03d7c7dd2ddda2b([""Stem""]):::none
   end
   subgraph Graph
     direction LR
-    xcc7ed83343bdf8a1{{"lcos"}}:::uptodate --> x8856b6f5990a3ba8>"fetch_wdpa"]:::uptodate
-    xcc7ed83343bdf8a1{{"lcos"}}:::uptodate --> x9d822cf0f859ce50>"make_valid"]:::uptodate
-    xcc7ed83343bdf8a1{{"lcos"}}:::uptodate --> xbd265a4b9d1db63c>"subset_wdpa"]:::uptodate
-    xb318f1ed264477a9{{"mapme_opts"}}:::uptodate --> xe11f8af622ddaa16(["indicators_wdpa"]):::outdated
-    xfb4ac4c02bebf8e6(["oecd_wdpas"]):::uptodate --> xe11f8af622ddaa16(["indicators_wdpa"]):::outdated
-    x895e315e834819a0>"run_mapme_indicators"]:::uptodate --> xe11f8af622ddaa16(["indicators_wdpa"]):::outdated
-    xbd265a4b9d1db63c>"subset_wdpa"]:::uptodate --> xfb4ac4c02bebf8e6(["oecd_wdpas"]):::uptodate
-    x22809eca128f81ae(["target_isos"]):::uptodate --> xfb4ac4c02bebf8e6(["oecd_wdpas"]):::uptodate
-    xec33757279ddc42f(["valid_wdpa"]):::uptodate --> xfb4ac4c02bebf8e6(["oecd_wdpas"]):::uptodate
-    x9d822cf0f859ce50>"make_valid"]:::uptodate --> xec33757279ddc42f(["valid_wdpa"]):::uptodate
-    x6b39f6574778e7d1(["raw_wdpa"]):::uptodate --> xec33757279ddc42f(["valid_wdpa"]):::uptodate
-    x319e910a6aad0021>"get_oda_recipients"]:::uptodate --> x3fdd82fbb50aeb4a(["oda_recipients"]):::uptodate
-    x62b530d25a77493e(["additional_isos"]):::uptodate --> x22809eca128f81ae(["target_isos"]):::uptodate
-    xa4155ee3dee9a125>"match_isos"]:::uptodate --> x22809eca128f81ae(["target_isos"]):::uptodate
-    x219e90e900a739ff(["oda_iso_codes"]):::uptodate --> x22809eca128f81ae(["target_isos"]):::uptodate
-    x3fdd82fbb50aeb4a(["oda_recipients"]):::uptodate --> x22809eca128f81ae(["target_isos"]):::uptodate
-    x8856b6f5990a3ba8>"fetch_wdpa"]:::uptodate --> x6b39f6574778e7d1(["raw_wdpa"]):::uptodate
-    xe996beafd3492a40{{"wdpa_opts"}}:::uptodate --> x6b39f6574778e7d1(["raw_wdpa"]):::uptodate
-    x3e3995729419150e>"get_oda_iso_codes"]:::uptodate --> x219e90e900a739ff(["oda_iso_codes"]):::uptodate
+    xe48d19884caae6a1(["oecd_wdpas"]):::uptodate --> x9618f2e9856d1918(["indicators_wdpa"]):::uptodate
+    x02e849c05d317ecb(["target_isos"]):::uptodate --> xe48d19884caae6a1(["oecd_wdpas"]):::uptodate
+    xe3337c4dc7e5112a(["valid_wdpa"]):::uptodate --> xe48d19884caae6a1(["oecd_wdpas"]):::uptodate
+    x2715fa8989f923a6(["raw_wdpa"]):::uptodate --> xe3337c4dc7e5112a(["valid_wdpa"]):::uptodate
+    x6e1d21aa66fc04c7(["additional_isos"]):::uptodate --> x02e849c05d317ecb(["target_isos"]):::uptodate
+    x6313b05bb926e61b(["oda_iso_codes"]):::uptodate --> x02e849c05d317ecb(["target_isos"]):::uptodate
+    x0fa0b08105a7c0a2(["oda_recipients"]):::uptodate --> x02e849c05d317ecb(["target_isos"]):::uptodate
   end
   classDef uptodate stroke:#000000,color:#ffffff,fill:#354823;
-  classDef outdated stroke:#000000,color:#000000,fill:#78B7C5;
   classDef none stroke:#000000,color:#000000,fill:#94a4ac;
   linkStyle 0 stroke-width:0px;
-  linkStyle 1 stroke-width:0px;
-  linkStyle 2 stroke-width:0px;
-  linkStyle 3 stroke-width:0px;
 ```
 
-To run the pipeline adjust `_targets.R` and `config-oecd-countries.yaml`
-to your local settings and then run the following from a shell:
+For this, ISO3 codes of ODA-receiving countries are retrieve from OECD
+servers. Additional ISO3 codes that should be included anyways, should
+be manually added to `additional_isos`.
+
+To adjust the pipeline change the contents of `_targets.R` and
+`config.yaml` to your local settings and then run the following from a
+shell:
 
 ``` shell
 $ Rscript -e 'targets::tar_make()'

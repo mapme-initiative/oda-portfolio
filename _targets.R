@@ -1,16 +1,17 @@
 # Load packages required to define the pipeline:
 library(targets)
+options(timeout = 600)
+options(future.globals.maxSize = 1.0 * 1e9)
 
 # adjust these variables to your local setup
-
 wdpa_opts <- list(
-  path = "./data",
-  version = "Jul2024"
+  path = "/home/rstudio/mapme/oda-portfolio/wdpa",
+  version = "Oct2024"
 )
 
 mapme_opts <- list(
-  outdir = "~/mapme/data",
-  rawdir = "~/mapme/raw",
+  outdir = "/home/rstudio/mapme/data",
+  rawdir = "/home/rstudio/mapme/raw",
   mapme_config = "./config.yaml",
   batch_size = 50000,
   max_cores = 10
@@ -23,9 +24,8 @@ tar_option_set(
   packages = c(
     "mapme.biodiversity",
     "mapme.pipelines",
-    "mapme.indicators",
-    "sf",
-    "readxl"
+    "readxl",
+    "sf"
   )
 )
 

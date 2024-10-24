@@ -43,8 +43,34 @@ resources:
   get_key_biodiversity_areas:
     args:
       path: $raw/kbas.gpkg
+  get_gmw:
+    args:
+      years: [2015, 2016, 2017, 2018, 2019, 2020]
+  get_ipbes_biomes:
+  #get_mcd64a1:
+  #  args:
+  #    years: [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
+  #  options:
+  #    maxcores: 4
+  get_esalandcover:
+    args:
+      years: [2015, 2016, 2017, 2018, 2019]
 
 indicators:
+  calc_mangroves_area:
+    options:
+      chunksize: 5000000
+  calc_ipbes_biomes:
+    options:
+      chunksize: 5000000
+  #calc_burned_area:
+  #  args:
+  #    engine: exactextract
+  #  options:
+  #    chunksize: 500000
+  calc_landcover:
+    options:
+      chunksize: 500000
   calc_treecover_area:
     args:
       years: [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
