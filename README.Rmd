@@ -12,28 +12,46 @@ knitr::opts_chunk$set(
 Sys.setenv(OPENSSL_CONF="/dev/null")
 ```
 
-# oda-portfolio
-
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 <!-- badges: end -->
 
-The goal of oda-portfolio is to establish a pipeline with the `{targets}` package
-to calculated indicators for all protected areas within countries that received
-official development aid by OECD member countries.
+# oda-portfolio
 
+The codes in this repository establish a pipeline with the [`{targets}`](https://books.ropensci.org/targets/) package
+to calculated a number of biodiversity related indicators for all protected 
+areas within countries that received official development aid by OECD member 
+countries.
+
+For this, the World Database on Protected Areas (WDPA) is downloaded and pre-processed
+to correct invalid geometries. From the OECD data sharing platform, information
+about which countries retrieved ODA is fetched. Additional countries to be included
+in the analysis can be added by manually listing ISO3 codes in a new line in the 
+file called [`additional_isos`](additional_isos). 
+
+Indicators are calculated using [`mapme.pipelines`](https://github.com/mapme-initiative/mapme.pipelines).
+The indicator configuration can be changed by adapting [`config.yaml`](config.yaml). 
+
+High-level configuration, such as inputs, data directories and outputs can be
+configured by adapting [`_targets.R`](_targets.R).
+
+The pipeline currently consists of the following functionality:
+
+- [`wdpa.R`](R/wdpa.R): fetching and pre-processing WDPA data
+- [`oecd.R`](R/oecd.R): fetching OECD information and subletting WDPA to respective ISO3 codes
+- [`mapme.R`](R/mapme.R): indicator calculation with [`mapme.pipelines`](https://github.com/mapme-initiative/mapme.pipelines)
+
+To run the pipeline, issue the following command in a shell:
+
+```shell
+$ Rscript -e 'targets::tar_make()'
+```
+
+Together these routines establish the following pipeline:
 
 ```{r, results = "asis", echo = FALSE}
 cat(c("```mermaid", targets::tar_mermaid(targets_only = TRUE), "```"), sep = "\n")
 ```
 
-For this, ISO3 codes of ODA-receiving countries are retrieve from OECD 
-servers. Additional ISO3 codes that should be included anyways, should be manually
-added to `additional_isos`. 
 
-To adjust the pipeline change the contents of `_targets.R` and `config.yaml` 
-to your local settings and then run the following from a shell:
 
-```shell
-$ Rscript -e 'targets::tar_make()'
-```
