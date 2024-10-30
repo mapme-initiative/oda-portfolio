@@ -17,7 +17,7 @@ countries.
 
 For this, the World Database on Protected Areas (WDPA) is downloaded and
 pre-processed to correct invalid geometries. From the OECD data sharing
-platform, information about which countries retrieved ODA is fetched.
+platform, information about which countries received ODA is fetched.
 Additional countries to be included in the analysis can be added by
 manually listing ISO3 codes in a new line in the file called
 [`additional_isos`](additional_isos).
@@ -27,13 +27,13 @@ Indicators are calculated using
 The indicator configuration can be changed by adapting
 [`config.yaml`](config.yaml).
 
-High-level configuration, such as inputs, data directories and outputs
-can be configured by adapting [`_targets.R`](_targets.R).
+High-level configuration, such as WDPA version, data directories and
+outputs can be configured by adapting [`_targets.R`](_targets.R).
 
 The pipeline currently consists of the following functionality:
 
 - [`wdpa.R`](R/wdpa.R): fetching and pre-processing WDPA data
-- [`oecd.R`](R/oecd.R): fetching OECD information and subletting WDPA to
+- [`oecd.R`](R/oecd.R): fetching OECD information and subsetting WDPA to
   respective ISO3 codes
 - [`mapme.R`](R/mapme.R): indicator calculation with
   [`mapme.pipelines`](https://github.com/mapme-initiative/mapme.pipelines)
