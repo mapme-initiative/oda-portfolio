@@ -1,17 +1,17 @@
 # Load packages required to define the pipeline:
 library(targets)
 options(timeout = 600)
-options(future.globals.maxSize = 1.0 * 1e9)
+options(future.globals.maxSize = 3.0 * 1e9)
 
 # adjust these variables to your local setup
 wdpa_opts <- list(
-  path = "/home/rstudio/mapme/oda-portfolio/wdpa",
-  version = "Oct2024"
+  path = "./raw/wdpa",
+  version = "Sep2024"
 )
 
 mapme_opts <- list(
-  outdir = "/home/rstudio/mapme/data",
-  rawdir = "/home/rstudio/mapme/raw",
+  outdir = "/vsiaz/mapme-data",
+  rawdir = "./raw",
   mapme_config = "./config.yaml",
   batch_size = 50000,
   max_cores = 10

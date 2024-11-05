@@ -7,3 +7,6 @@
 wdpa
 *.gpkg
 *.parquet
+*.kml
+*.kmz
+*.xlsx
