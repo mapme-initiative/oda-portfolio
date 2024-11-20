@@ -1,0 +1,6 @@
+outs:
+- md5: f86b4382da5c6e07517a339c2890f486.dir
+  size: 14698
+  nfiles: 9
+  hash: md5
+  path: _targets

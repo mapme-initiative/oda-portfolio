@@ -10,3 +10,5 @@ wdpa
 *.kml
 *.kmz
 *.xlsx
+/_targets
+/raw
