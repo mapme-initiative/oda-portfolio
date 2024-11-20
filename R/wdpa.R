@@ -22,7 +22,7 @@ fetch_wdpa <- function(path, version) {
 
   if (!spds_exists(url)) {
     stop(paste(
-      sprintf("WDAP version '%s' does not seem to exist.\n", version),
+      sprintf("WDPA version '%s' does not seem to exist.\n", version),
       sprintf("Latest version is: '%s'", latest_ver)
     ))
   }
